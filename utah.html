@@ -1,656 +1,328 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- utf-8 works for most cases -->
-
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
-
     <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
-
-
     <!-- Web Font / @font-face : BEGIN -->
-
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
-
-
 
     <!-- TEMPLATE TAKEN FROM https://tedgoas.github.io/Cerberus/ -->
 
-
-
     <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
-
     <!--[if mso]>
-
         <style>
-
             * {
-
                 font-family: sans-serif !important;
-
             }
-
         </style>
-
     <![endif]-->
 
-
-
     <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-
     <!--[if !mso]><!-->
-
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
     <!--<![endif]-->
-
-
 
     <!-- Web Font / @font-face : END -->
 
-
-
     <!-- CSS Reset : BEGIN -->
-
     <style>
 
-
-
         /* What it does: Remove spaces around the email design added by some email clients. */
-
         /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-
         html,
-
         body {
-
             margin: 0 !important;
-
             padding: 0 !important;
-
             height: 100% !important;
-
             width: 100% !important;
-
         }
-
-
 
         /* What it does: Stops email clients resizing small text. */
-
         * {
-
             -ms-text-size-adjust: 100%;
-
             -webkit-text-size-adjust: 100%;
-
         }
-
-
 
         /* What it does: Centers email on Android 4.4 */
-
         div[style*="margin: 16px 0"] {
-
             margin: 0 !important;
-
         }
-
-
 
         /* What it does: Stops Outlook from adding extra spacing to tables. */
-
         table,
-
         td {
-
             mso-table-lspace: 0pt !important;
-
             mso-table-rspace: 0pt !important;
-
         }
-
-
 
         /* What it does: Fixes webkit padding issue. */
-
         table {
-
             border-spacing: 0 !important;
-
             border-collapse: collapse !important;
-
             table-layout: fixed !important;
-
             margin: 0 auto !important;
-
         }
-
-
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
-
         img {
-
             -ms-interpolation-mode:bicubic;
-
         }
-
-
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
-
         a {
-
             text-decoration: none;
-
             color: #297DBB;
-
         }
-
-
 
         /* What it does: A work-around for email clients meddling in triggered links. */
-
         a[x-apple-data-detectors],  /* iOS */
-
         .unstyle-auto-detected-links a,
-
         .aBn {
-
             border-bottom: 0 !important;
-
             cursor: default !important;
-
             color: inherit !important;
-
             text-decoration: none !important;
-
             font-size: inherit !important;
-
             font-family: inherit !important;
-
             font-weight: inherit !important;
-
             line-height: inherit !important;
-
         }
-
-
 
         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-
         .a6S {
-
             display: none !important;
-
             opacity: 0.01 !important;
-
         }
-
-
 
         /* What it does: Prevents Gmail from changing the text color in conversation threads. */
-
         .im {
-
             color: inherit !important;
-
         }
-
-
 
         /* If the above doesn't work, add a .g-img class to any image in question. */
-
         img.g-img + div {
-
             display: none !important;
-
         }
-
-
 
         .email-promo p {
-
             margin: 0 auto 5px auto;
-
             font-size: 14px;
-
         }
-
-
 
         /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-
         /* Create one of these media queries for each additional viewport size you'd like to fix */
 
-
-
         /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-
         @media  only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-
             u ~ div .email-container {
-
                 min-width: 320px !important;
-
             }
-
         }
-
         /* iPhone 6, 6S, 7, 8, and X */
-
         @media  only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-
             u ~ div .email-container {
-
                 min-width: 375px !important;
-
             }
-
         }
-
         /* iPhone 6+, 7+, and 8+ */
-
         @media  only screen and (min-device-width: 414px) {
-
             u ~ div .email-container {
-
                 min-width: 414px !important;
-
             }
-
         }
-
-
 
     </style>
 
-
-
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
-
     <!--[if gte mso 9]>
-
     <xml>
-
         <o:OfficeDocumentSettings>
-
             <o:AllowPNG/>
-
             <o:PixelsPerInch>96</o:PixelsPerInch>
-
         </o:OfficeDocumentSettings>
-
     </xml>
-
     <![endif]-->
-
-
 
     <!-- CSS Reset : END -->
 
-
-
     <!-- Progressive Enhancements : BEGIN -->
-
     <style>
 
-
-
 	    /* What it does: Hover styles for buttons */
-
 	    .button-td,
-
 	    .button-a {
-
 	        transition: all 100ms ease-in;
-
 	    }
-
 	    .button-td-primary:hover,
-
 	    .button-a-primary:hover {
-
 	        background: #3395DD !important;
-
 	        border-color: #3395DD !important;
-
 	    }
-
-
 
 	    /* Media Queries */
-
 	    @media  screen and (max-width: 600px) {
 
-
-
 	        /* What it does: Adjust typography on small screens to improve readability */
-
 	        .email-container p {
-
 	            font-size: 17px !important;
-
 	        }
-
-
 
 	    }
 
-
-
     </style>
-
     <!-- Progressive Enhancements : END -->
 
-
-
 </head>
-
 <!--
-
 	The email background color (#F5F5F5) is defined in three places:
-
 	1. body tag: for most email clients
-
 	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
-
 	3. mso conditional: For Windows 10 Mail
-
 -->
-
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #F5F5F5;">
-
 	<center style="padding: 20px; background-color: #F5F5F5;">
-
     <!--[if mso | IE]>
-
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F5F5F5;">
-
     <tr>
-
     <td>
-
     <![endif]-->
-
         <!--
-
             Set the email width. Defined in two places:
-
             1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
-
             2. MSO tags for Desktop Windows Outlook enforce a 600px width.
-
         -->
-
         <div style="max-width: 600px; margin: 20px;" class="email-container">
-
             <!--[if mso]>
-
             <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
-
             <tr>
-
             <td>
-
             <![endif]-->
 
-
-
 	        <!-- Email Body : BEGIN -->
-
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-
 		        <!-- Email Header : BEGIN -->
-
 	            <tr>
-
 	                <td style="padding: 10px 0 20px 0; text-align: center">
-
                                                     <img src="https://lift.opensnow.com/email/opensnow_mark.png" height="50" width="50" alt="OpenSnow">
-
                                                 	                </td>
-
 	            </tr>
-
 		        <!-- Email Header : END -->
 
-
-
                 <!-- Hero Image Block -->
-
                                     <tr>
-
                         <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
-
                             <img src="https://lift.opensnow.com/email/emailheader-snow10.jpg" width="600" height="" alt="OpenSnow Header Image" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
-
                         </td>
-
                     </tr>
-
                 
-
                 <!-- Main Content Block -->
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
-
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-
                             <tr>
-
                                 <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 20px; color: #555555;">
-
                                     <h1 style="margin: 0 0 20px 0; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 28px; line-height: 36px; color: #333333; font-weight: 700;">    Utah Daily Snow
-
 </h1>
 
-
-
                                     <div style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5;">
-
     <div class="subtitle" style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 18px; margin: 10px 0;">
-
-        Snowbasin Goes Non Compos Mentis
-
+        Catch Our Collective Breath
     </div>
 
-
-
-    <p>By Forecaster Evan Thayer<br>Monday March 27, 2023 7:29am MDT</p>
-
-
+    <p>By Forecaster Evan Thayer<br>Tuesday March 28, 2023 7:40am MDT</p>
 
     <div style="margin: 25px auto;">
-
         <table align="center" role="presentation" cellpadding="0" border="0" style="margin: auto;">
-
             <tr>
-
                 <td class="button-td button-td-primary" style="border-radius: 4px; background: #297DBB;">
-
-                     <a class="button-a button-a-primary" href="https://opensnow.com/dailysnow/utah/post/30248" style="background: #297DBB; border: 1px solid #297DBB; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 18px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px; text-align: center;">View This Post on OpenSnow</a>
-
+                     <a class="button-a button-a-primary" href="https://opensnow.com/dailysnow/utah/post/30269" style="background: #297DBB; border: 1px solid #297DBB; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 18px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px; text-align: center;">View This Post on OpenSnow</a>
                 </td>
-
             </tr>
-
         </table>
-
     </div>
 
-
-
-    <p><h4 class="ds-section">Summary</h4><p>A wave of snow passed through the Wasatch last night and this morning. It combined with lake enhancement to bring absurd totals to Snowbasin with good snow elsewhere. Snow tapers off today (Monday). A break Tuesday with winds picking up late. Next storm arrives Wednesday, lasting through Friday. </p><h4 class="ds-section">Short Term Forecast</h4><p>Snowbasin went bonkers over the past 24 hours! Let's start with yesterday morning when an intense band of snow brought 11&quot; in only a few hours to the mountain... That led to one of the best powder days of the season and I was already planning on talking about how great yesterday was at Snowbasin. It also set the record for most snow in a season at Snowbasin.&nbsp;</p>  <p>Then... if that weren't enough, last night was off the charts insane as the next wave of energy combined with lake enhancement to absolutely crush Snowbasin with TWENTY-TWO inches of snow overnight and THIRTY-THREE inches of snow in 24 hours. WHAT!?!&nbsp; Just watch this past 24 hours and notice how they clear the snowstake yesterday afternoon:</p>  <p><img src="https://lift.opensnow.com/media-images/16799225461378fd2c396fb7b9edc2fcc7432dffc7.gif" alt="" width="100%" height="auto"></p>  <p>It's still snowing a bit up there by the way...&nbsp;</p>  <p>At other areas, the totals were good. Generally 3-8&quot; reported elsewhere in the Wasatch over the past 24 hours. Powder Mountain will also be excellent today:&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/1679922612653b68c5c20b138b29cce08bab4121e8.jpg" alt="" width="100%" height="auto"></p>  <p>It continues to snow at Alta with 7&quot; overnight:</p>  <p><img src="https://lift.opensnow.com/media-images/16799226348038ab8e71088868337473d9f3cb3139.jpg" alt="" width="100%" height="auto"></p>  <p>Snow showers will continue this morning but should taper off and we could get some sun later today. Get to the powder early because the sun this time of year has a very rapid, caustic effect on the snow.&nbsp;</p>  <p>Tuesday is a break day with mostly clear conditions but winds will be picking up and could get gusty, especially late in the day.&nbsp;</p>  <p>The&nbsp;<strong>next storm&nbsp;</strong>moves in on Wednesday with snow developing in the high elevations by the afternoon. This storm is similar to the warmer, atmospheric river-type storms we saw a couple of weeks ago. Lots of moisture moving in out of the southwest as the low spins off the California coast before ejecting inland. This will keep showers going Wednesday PM through Friday for a long-duration event. It will start warm with 700mb temps as high as -4C, then cool off by Thursday with snow levels dropping from 7000ft down to 5000 feet or so later in the storm.&nbsp;</p>  <p>WPC shows decent totals midday Wednesday through midday Friday:</p>  <p><img src="https://lift.opensnow.com/media-images/1679922925c2b65eeae6eaf91a63bf1f106382ac2c.png" alt="" width="100%" height="auto"></p>  <p>In general, liquid amounts should be 0.75-1.5&quot; in the mountains of Utah. If we assume 10:1 ratios in the high elevations on average, then 8-15&quot; is certainly likely. We could see pockets of higher liquid and better ratios, so amounts of 15-25&quot; could be possible if everything comes together. We'll continue to fine-tune as we get closer. The point is... another good storm is likely this week.&nbsp;&nbsp;</p><h4 class="ds-section">Extended Forecast</h4><p>The hits just keep coming. We could have a break for the first half of the upcoming weekend, but it could get active again as early as Sunday. Both the GFS and Euro have a storm arriving late weekend or early next week. This storm looks like it could be fairly cool with good moisture -- so there's good potential at this point. Another storm beyond that is possible, although some ensembles take it farther west, missing us a bit. You can see that the ensemble mean continues to climb for the next 10 days:</p>  <p><img src="https://lift.opensnow.com/media-images/16799234071a77f6b650ef0ec711f028ccf6d6e7a9.PNG" alt="" width="100%" height="auto"></p>  <p>This is only going to add to an already record-breaking snowpack. If you're wondering when is this going to end, well I don't know. But, there are some indications that we may see high pressure develop around April 10th. The EPS ensembles have been consistent with this idea for a few runs:</p>  <p><img src="https://lift.opensnow.com/media-images/1679923554cb4f725a3ce504ee098e6b681f4cac67.png" alt="" width="100%" height="auto"></p>  <p>While the skier and forecaster in me wants it to snow until the end of time and shatter records further -- I do concede for hydrological reasons that it's probably best for us to see some warmer temps and begin the melt off so we can do it more gradually.&nbsp;</p>  <p>(In 1983, we had a record snowpack as late as May 21. Then we saw temps of 90F in SLC and all the snow started melting at once. Unlikely to happen again this year, but you never know.)</p>  <p>Evan | OpenSnow</p></p>
-
-
+    <p><h4 class="ds-section">Summary</h4><p>No snow expected today for the first time in quite a while. However, we will see a few clouds develop and winds pick up as our next storm moves toward the area. Snow likely late Wednesday through Friday. Another storm for late weekend into early next week. </p><h4 class="ds-section">Short Term Forecast</h4><p>No snow is falling in Utah right now! First time I've been able to say that for about a week or more. Beauty of a morning out there:</p>  <p><img src="https://lift.opensnow.com/media-images/1680010182e0186c4bc8b68895bcf1cc0c264d89ac.jpg" alt="" width="100%" height="auto"></p>  <p><img src="https://lift.opensnow.com/media-images/16800101979b1cee1deaca4cfaf327350afa9fca4e.jpg" alt="" width="100%" height="auto"></p>  <p>We will see clouds start to increase today and winds pick up as well. That's all thanks to a low pressure system that is dropping down the California coast today and bringing the Sierra Nevada more big snowfall totals. Eventually, that system will push far enough east to bring a moist SW flow to Utah on Wednesday. We should see high elevation (above 7500 feet) snow Wednesday afternoon and evening with rain below that level. Snow levels will fall to 5500ft or so by Thursday morning as the SW flow continues with embedded disturbances.&nbsp;</p>  <p>By Thursday night into Friday, the flow will turn more NW behind the front. This means snow levels will drop to valley floors and we could have a period of good NW flow orographics through Friday morning.&nbsp;</p>  <p>It's not a huge storm, but off and on snow Wednesday PM through Friday AM should add up. Here is the NBM totals through Friday afternoon:</p>  <p><img src="https://lift.opensnow.com/media-images/1680010398c7b16f439946cbd506657d686617ab55.png" alt="" width="100%" height="auto"></p>  <p>Just for sticks and goggles, let's also look at the snow parameter:</p>  <p><img src="https://lift.opensnow.com/media-images/168001045050d060d357db960e1c14fb5ae3c601f1.png" alt="" width="100%" height="auto"></p>  <p>In general, Utah mountains are showing 0.75-1.5&quot; of liquid from this storm. For me, that's likely another 10-20&quot; of snow -- although there could be pockets of higher amounts, especially if the Friday morning NW flow is productive.&nbsp;</p>  <p>From a riding perspective, Thursday will have fresh snow and so will Friday. Both should be good days to be out if you're looking for powder -- but the snow quality is probably better on Friday behind the front.&nbsp;</p><h4 class="ds-section">Extended Forecast</h4><p>We are going to have a break late Friday through Saturday. Models agree on another storm coming in from Sunday thru Tuesday, but disagree on the timing. The Euro and most ensembles have the best chances for precip Monday into Tuesday, but the latest operational GFS starts precip as early as Saturday night and has the best precip falling on Sunday. Might need another day of runs to get a better grip on the exact timing, but the point is that we should have another cold spring trough to start April. We are likely looking at more good snowfall totals. After that, we could have a follow-up system late next week. Then, we could finally see some drying and warming for the second week of April.&nbsp;</p>  <p>Evan | OpenSnow</p>  <p>Latest episode of The Flakes Podcast:</p>  <p></p>  <p><iframe src="https://www.podomatic.com/embed/html5/episode/10504974?style=normal&amp;width=504&amp;height=208" width="100%" height="208" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p></p>
 
     <p style="margin-left:auto;margin-right:auto;text-align:center;font-size:14px;">
-
         <a href="https://opensnow.com/user/settings/alerts">View or Edit your Daily Snow Alerts</a>
-
     </p>
 
 
-
-
-
 </div>
-
                                 </td>
-
                             </tr>
-
                         </table>
-
                     </td>
-
                 </tr>
 
-
-
                 
-
                                 <!-- OpenSnow App Buttons Block -->
-
                 <tr>
-
                     <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
-
                         &nbsp;
-
                     </td>
-
                 </tr>
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
-
                         <img src="https://lift.opensnow.com/email/opensnow_app_4.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
-
                     </td>
-
                 </tr>
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
-
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-
                             <tr>
-
                                 <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.5; color: #555555;">
-
                                     <h2 style="margin:0 auto;padding:0; font-size: 22px;">Download the OpenSnow App</h2>
-
                                     <p style="margin: 10px 0 0 0;">Enjoy the snow and don’t forget to download the OpenSnow Mobile App to track the next storm on-the-go!</p>
-
                                     <p style="margin:20px auto 0 auto; text-align: center;">
-
                                         <a href="https://itunes.apple.com/us/app/opensnow-ski-forecasts-reports/id780890907" target="_blank">
-
                                     		<img src="https://lift.opensnow.com/email/appstore.png" alt="Download on the App Store" width="auto" height="45">
-
                                     	</a>
-
                                     	<a href="https://play.google.com/store/apps/details?id=com.opensnow.android" target="_blank">
-
                                     		<img alt="Get it on Google Play" src="https://lift.opensnow.com/email/playstore.png" width="auto" height="45">
-
                                     	</a>
-
                                     </p>
-
                                 </td>
-
                             </tr>
-
                         </table>
-
                     </td>
-
                 </tr>
-
                 
-
                 
-
             </table>
-
             <!-- Email Body : END -->
 
-
-
             <!-- Email Footer : BEGIN -->
-
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-
                 <tr>
-
                     <td style="padding: 30px 20px 40px 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 12px; line-height: 1.3; text-align: center; color: #888888;">
-
                         You received this email because you are a registered user of OpenSnow &amp; OpenSummit.<br><br>
-
 						<strong>Cloudnine Weather LLC</strong><br><span class="unstyle-auto-detected-links">637B South Broadway #131, Boulder, Colorado 80305</span>
-
                         <br><br>
-
                         <a href="https://opensnow.com">opensnow.com</a> |
-
                         <a href="https://opensummit.com">opensummit.com</a>
-
                         <br><br>
-
                     </td>
-
                 </tr>
-
             </table>
-
             <!-- Email Footer : END -->
 
-
-
             <!--[if mso]>
-
             </td>
-
             </tr>
-
             </table>
-
             <![endif]-->
-
         </div>
 
-
-
     <!--[if mso | IE]>
-
     </td>
-
     </tr>
-
     </table>
-
     <![endif]-->
-
     </center>
-
-<img src="http://email.opensnow.com/wf/open?upn=YOMrZnYpAM3KItlLeHy3yvGPIIJNAJMiALAtBk6q-2BDXHuZyN1z8Mbr7p4X9IBTEgAZF19PucBXKs110hKH-2BsZY-2FGCaDOdV68CFnnCibNtaVjw67Jd1QNlte7AHy4NAOLz-2FZKdV3Yv3Tj3nY4lVcefJJJSOFTmx0abxhDTuJBJKdyzVlBU5Qq0Bkst1BbeMu8nA54n0YzYxfSsIS5SRnhJf8LPq77L-2FzRh-2BOgXoAVWXPkvYXXntfNfqlsU7Ed8gexn6LWfla2aIbSpesKV23w3g-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"></body>
-
+<img src="http://email.opensnow.com/wf/open?upn=YOMrZnYpAM3KItlLeHy3yvGPIIJNAJMiALAtBk6q-2BDXqJyDLTr4s3GKKLmwuf7xp7Q2Oui8v3iHiriQ1aYGP8QsTvcotc0Zc3D33ZfVYVnVgbSmfwGLDVDjrIRArxirB3Di-2B5d82fL9A6h8J-2FwPfgjYlH1SpiismdNgx0sHq9s5YblxT-2FvCrntYvzQ8IT6CUzOZW48HejRC2N1-2Bxorqhzus26w3HFJBv4nP5pT-2Fs56PzSpCudCQ7g-2Fe0UGFaYFLgAqwxOrnsir6s5414z9-2B-2FkA-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"></body>
 </html>
-
-
 
