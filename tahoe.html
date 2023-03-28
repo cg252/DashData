@@ -1,656 +1,328 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- utf-8 works for most cases -->
-
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
-
     <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
-
-
     <!-- Web Font / @font-face : BEGIN -->
-
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
-
-
 
     <!-- TEMPLATE TAKEN FROM https://tedgoas.github.io/Cerberus/ -->
 
-
-
     <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
-
     <!--[if mso]>
-
         <style>
-
             * {
-
                 font-family: sans-serif !important;
-
             }
-
         </style>
-
     <![endif]-->
 
-
-
     <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-
     <!--[if !mso]><!-->
-
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
     <!--<![endif]-->
-
-
 
     <!-- Web Font / @font-face : END -->
 
-
-
     <!-- CSS Reset : BEGIN -->
-
     <style>
 
-
-
         /* What it does: Remove spaces around the email design added by some email clients. */
-
         /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-
         html,
-
         body {
-
             margin: 0 !important;
-
             padding: 0 !important;
-
             height: 100% !important;
-
             width: 100% !important;
-
         }
-
-
 
         /* What it does: Stops email clients resizing small text. */
-
         * {
-
             -ms-text-size-adjust: 100%;
-
             -webkit-text-size-adjust: 100%;
-
         }
-
-
 
         /* What it does: Centers email on Android 4.4 */
-
         div[style*="margin: 16px 0"] {
-
             margin: 0 !important;
-
         }
-
-
 
         /* What it does: Stops Outlook from adding extra spacing to tables. */
-
         table,
-
         td {
-
             mso-table-lspace: 0pt !important;
-
             mso-table-rspace: 0pt !important;
-
         }
-
-
 
         /* What it does: Fixes webkit padding issue. */
-
         table {
-
             border-spacing: 0 !important;
-
             border-collapse: collapse !important;
-
             table-layout: fixed !important;
-
             margin: 0 auto !important;
-
         }
-
-
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
-
         img {
-
             -ms-interpolation-mode:bicubic;
-
         }
-
-
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
-
         a {
-
             text-decoration: none;
-
             color: #297DBB;
-
         }
-
-
 
         /* What it does: A work-around for email clients meddling in triggered links. */
-
         a[x-apple-data-detectors],  /* iOS */
-
         .unstyle-auto-detected-links a,
-
         .aBn {
-
             border-bottom: 0 !important;
-
             cursor: default !important;
-
             color: inherit !important;
-
             text-decoration: none !important;
-
             font-size: inherit !important;
-
             font-family: inherit !important;
-
             font-weight: inherit !important;
-
             line-height: inherit !important;
-
         }
-
-
 
         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-
         .a6S {
-
             display: none !important;
-
             opacity: 0.01 !important;
-
         }
-
-
 
         /* What it does: Prevents Gmail from changing the text color in conversation threads. */
-
         .im {
-
             color: inherit !important;
-
         }
-
-
 
         /* If the above doesn't work, add a .g-img class to any image in question. */
-
         img.g-img + div {
-
             display: none !important;
-
         }
-
-
 
         .email-promo p {
-
             margin: 0 auto 5px auto;
-
             font-size: 14px;
-
         }
-
-
 
         /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-
         /* Create one of these media queries for each additional viewport size you'd like to fix */
 
-
-
         /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-
         @media  only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-
             u ~ div .email-container {
-
                 min-width: 320px !important;
-
             }
-
         }
-
         /* iPhone 6, 6S, 7, 8, and X */
-
         @media  only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-
             u ~ div .email-container {
-
                 min-width: 375px !important;
-
             }
-
         }
-
         /* iPhone 6+, 7+, and 8+ */
-
         @media  only screen and (min-device-width: 414px) {
-
             u ~ div .email-container {
-
                 min-width: 414px !important;
-
             }
-
         }
-
-
 
     </style>
 
-
-
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
-
     <!--[if gte mso 9]>
-
     <xml>
-
         <o:OfficeDocumentSettings>
-
             <o:AllowPNG/>
-
             <o:PixelsPerInch>96</o:PixelsPerInch>
-
         </o:OfficeDocumentSettings>
-
     </xml>
-
     <![endif]-->
-
-
 
     <!-- CSS Reset : END -->
 
-
-
     <!-- Progressive Enhancements : BEGIN -->
-
     <style>
 
-
-
 	    /* What it does: Hover styles for buttons */
-
 	    .button-td,
-
 	    .button-a {
-
 	        transition: all 100ms ease-in;
-
 	    }
-
 	    .button-td-primary:hover,
-
 	    .button-a-primary:hover {
-
 	        background: #3395DD !important;
-
 	        border-color: #3395DD !important;
-
 	    }
-
-
 
 	    /* Media Queries */
-
 	    @media  screen and (max-width: 600px) {
 
-
-
 	        /* What it does: Adjust typography on small screens to improve readability */
-
 	        .email-container p {
-
 	            font-size: 17px !important;
-
 	        }
-
-
 
 	    }
 
-
-
     </style>
-
     <!-- Progressive Enhancements : END -->
 
-
-
 </head>
-
 <!--
-
 	The email background color (#F5F5F5) is defined in three places:
-
 	1. body tag: for most email clients
-
 	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
-
 	3. mso conditional: For Windows 10 Mail
-
 -->
-
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #F5F5F5;">
-
 	<center style="padding: 20px; background-color: #F5F5F5;">
-
     <!--[if mso | IE]>
-
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F5F5F5;">
-
     <tr>
-
     <td>
-
     <![endif]-->
-
         <!--
-
             Set the email width. Defined in two places:
-
             1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
-
             2. MSO tags for Desktop Windows Outlook enforce a 600px width.
-
         -->
-
         <div style="max-width: 600px; margin: 20px;" class="email-container">
-
             <!--[if mso]>
-
             <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
-
             <tr>
-
             <td>
-
             <![endif]-->
 
-
-
 	        <!-- Email Body : BEGIN -->
-
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-
 		        <!-- Email Header : BEGIN -->
-
 	            <tr>
-
 	                <td style="padding: 10px 0 20px 0; text-align: center">
-
                                                     <img src="https://lift.opensnow.com/email/opensnow_mark.png" height="50" width="50" alt="OpenSnow">
-
                                                 	                </td>
-
 	            </tr>
-
 		        <!-- Email Header : END -->
 
-
-
                 <!-- Hero Image Block -->
-
                                     <tr>
-
                         <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
-
                             <img src="https://lift.opensnow.com/email/emailheader-snow10.jpg" width="600" height="" alt="OpenSnow Header Image" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
-
                         </td>
-
                     </tr>
-
                 
-
                 <!-- Main Content Block -->
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
-
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-
                             <tr>
-
                                 <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 20px; color: #555555;">
-
                                     <h1 style="margin: 0 0 20px 0; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 28px; line-height: 36px; color: #333333; font-weight: 700;">    Palisades Tahoe Daily Snow
-
 </h1>
 
-
-
                                     <div style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5;">
-
     <div class="subtitle" style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 18px; margin: 10px 0;">
-
         Snowstorm Tuesday, Snow Showers Wed - Sun...
-
     </div>
-
-
 
     <p>By Forecaster Bryan Allegretto<br>Monday March 27, 2023 8:19am PDT</p>
 
-
-
     <div style="margin: 25px auto;">
-
         <table align="center" role="presentation" cellpadding="0" border="0" style="margin: auto;">
-
             <tr>
-
                 <td class="button-td button-td-primary" style="border-radius: 4px; background: #297DBB;">
-
                      <a class="button-a button-a-primary" href="https://opensnow.com/dailysnow/palisadestahoe/post/30255" style="background: #297DBB; border: 1px solid #297DBB; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 18px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px; text-align: center;">View This Post on OpenSnow</a>
-
                 </td>
-
             </tr>
-
         </table>
-
     </div>
-
-
 
     <p><p><strong>Monday:</strong></p>  <p><span>Monday will start out sunny with highs in the 30s at the base and 20s up top. Some high clouds increase through the afternoon ahead of the next storm.</span></p>  <p><strong>Tuesday&nbsp; - Wednesday Storm:</strong></p>  <p><span>The latest model runs show the Tuesday storm pushing snow showers insuring the early morning hours Tuesday, but holding off on heavier snow until later in the morning into the evening as the cold front moves through the Tahoe basin. </span><span>Ridgetop winds from the southwest gusting up to 90-100+ mph by midday. That will likely close several lifts. Highs into the 30s. Snow levels stay below the base.</span></p>  <p><span>Snow showers become more scattered later Tuesday night into Wednesday morning. Then snow showers could increase Wednesday afternoon-evening before finally winding down later Wednesday night. The winds drop on Wednesday with highs in the 20s up top and 30s at the base.</span></p>  <p>Most of the snow is expected to fall by Wednesday morning, with only 1-2 inches expected to fall with the snow showers later Wednesday. By Thursday morning we could see storm snowfall totals of:</p>  <ul>  <li><strong>12-18 inches </strong>at the base.</li>  <li><strong>15-21 </strong><span><strong>inches</strong> </span>at mid-mountain elevations.</li>  <li><strong>18-24 inches</strong><span>&nbsp;</span>up top.</li>  </ul>  <p><strong>Thursday - Friday:</strong></p>  <p><span>Partly sunny skies on both days with highs into the 20s up top and 30s for the base. We could see some scattered snow showers each afternoon-evening, but only very light accumulations are expected at best. The winds are expected to be lighter as well.</span></p>  <p><strong>WinterWonderGrass Weekend:</strong></p>  <p>The latest model runs are trending back to the north with the Saturday system. We could see partly sunny skies with afternoon-evening snow showers. Highs into the 30s. Depending on how far south the Saturday system digs into the Sierra we could see just a dusting to an inch of snow, or several inches of snow through Saturday evening. We'll continue to fine-tune the forecast all week.</p>  <p>The next system diving into the trough later Sunday into Monday looks to dig farther south with a better chance for snow showers into the Tahoe basin and up to a few inches of snow to fall on the mountains. Highs in the 20s up top and 30s at the base.&nbsp;</p>  <p>Snow levels could be near to just above the base with some rain mixing in both Friday and Saturday afternoons. If the Saturday storm digs farther south that would bring in some colder air and lower snow levels. Snow levels drop well below the base at night and for Sunday-Sunday night.</p>  <p>The low end of the updated snowfall forecast for the weekend would be the drier scenario with the Saturday system farther north. The higher end would be if the Saturday system digs farther south. Some models even show a bit more than my high-end forecast. Here is the updated weekend snowfall forecast taking the model average.</p>  <ul>  <li><strong>1-5 inches </strong>at the base.</li>  <li><strong>2-6 </strong><span><strong>inches</strong> </span>at mid-mountain elevations.</li>  <li><strong>3-7 inches</strong><span>&nbsp;</span>up top.</li>  </ul>  <p>If you are planning to attend the WinterWonderGrass Festival Friday through Sunday at the base, you'll want to dress warmly and prepare for snow to be falling while you are watching the concerts.</p>  <p><strong>Long-Range:</strong></p>  <p><span>Beyond the weekend, the long-range models are showing the trough remaining over the region with a cold and unsettled pattern through the first week of April. We could see additional weak systems move through bringing more snow to the mountain through the end of next week.</span></p>  <p><span>The long-range models suggest that high pressure finally starts to build over the West Coast during the 2nd week of April. We'll have to see if that holds. It's April though and the jet stream is weakening and shifting north with time, so we may have a better chance of the models being right with a trend toward a drier pattern with time.</span></p>  <p>BA</p>  <p></p></p>
 
-
-
     <p style="margin-left:auto;margin-right:auto;text-align:center;font-size:14px;">
-
         <a href="https://opensnow.com/user/settings/alerts">View or Edit your Daily Snow Alerts</a>
-
     </p>
 
 
-
-
-
 </div>
-
                                 </td>
-
                             </tr>
-
                         </table>
-
                     </td>
-
                 </tr>
 
-
-
                 
-
                                 <!-- OpenSnow App Buttons Block -->
-
                 <tr>
-
                     <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
-
                         &nbsp;
-
                     </td>
-
                 </tr>
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
-
                         <img src="https://lift.opensnow.com/email/opensnow_app_4.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
-
                     </td>
-
                 </tr>
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
-
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-
                             <tr>
-
                                 <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.5; color: #555555;">
-
                                     <h2 style="margin:0 auto;padding:0; font-size: 22px;">Download the OpenSnow App</h2>
-
                                     <p style="margin: 10px 0 0 0;">Enjoy the snow and don’t forget to download the OpenSnow Mobile App to track the next storm on-the-go!</p>
-
                                     <p style="margin:20px auto 0 auto; text-align: center;">
-
                                         <a href="https://itunes.apple.com/us/app/opensnow-ski-forecasts-reports/id780890907" target="_blank">
-
                                     		<img src="https://lift.opensnow.com/email/appstore.png" alt="Download on the App Store" width="auto" height="45">
-
                                     	</a>
-
                                     	<a href="https://play.google.com/store/apps/details?id=com.opensnow.android" target="_blank">
-
                                     		<img alt="Get it on Google Play" src="https://lift.opensnow.com/email/playstore.png" width="auto" height="45">
-
                                     	</a>
-
                                     </p>
-
                                 </td>
-
                             </tr>
-
                         </table>
-
                     </td>
-
                 </tr>
-
                 
-
                 
-
             </table>
-
             <!-- Email Body : END -->
 
-
-
             <!-- Email Footer : BEGIN -->
-
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-
                 <tr>
-
                     <td style="padding: 30px 20px 40px 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 12px; line-height: 1.3; text-align: center; color: #888888;">
-
                         You received this email because you are a registered user of OpenSnow &amp; OpenSummit.<br><br>
-
 						<strong>Cloudnine Weather LLC</strong><br><span class="unstyle-auto-detected-links">637B South Broadway #131, Boulder, Colorado 80305</span>
-
                         <br><br>
-
                         <a href="https://opensnow.com">opensnow.com</a> |
-
                         <a href="https://opensummit.com">opensummit.com</a>
-
                         <br><br>
-
                     </td>
-
                 </tr>
-
             </table>
-
             <!-- Email Footer : END -->
 
-
-
             <!--[if mso]>
-
             </td>
-
             </tr>
-
             </table>
-
             <![endif]-->
-
         </div>
 
-
-
     <!--[if mso | IE]>
-
     </td>
-
     </tr>
-
     </table>
-
     <![endif]-->
-
     </center>
-
 <img src="http://email.opensnow.com/wf/open?upn=YOMrZnYpAM3KItlLeHy3yvGPIIJNAJMiALAtBk6q-2BDXI00HdbGL8QTsuo7dflcZJY714crh1zu6p89nQ5LBhABSOnNFREmjCzHPxK3GuA4P3oExEz6k80YqOdA3nMxxwTg0fiGKTq3kK6Kos7I3ieQXqz-2F9hyMDk8CSuh8-2BQwKYPJuNGMMpmEq7l3YT7TU3Jwi3Uigi9z0pBdULd497HWJnrPF0YRCuAI-2FVMoFnLwmacnPrLSx-2FJlPANYnsLVcZs8LGddmAHJ3BHNb-2FCrvkhRA-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"></body>
-
 </html>
-
-
 
