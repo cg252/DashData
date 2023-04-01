@@ -1,656 +1,328 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- utf-8 works for most cases -->
-
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
-
     <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
-
-
     <!-- Web Font / @font-face : BEGIN -->
-
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
-
-
 
     <!-- TEMPLATE TAKEN FROM https://tedgoas.github.io/Cerberus/ -->
 
-
-
     <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
-
     <!--[if mso]>
-
         <style>
-
             * {
-
                 font-family: sans-serif !important;
-
             }
-
         </style>
-
     <![endif]-->
 
-
-
     <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-
     <!--[if !mso]><!-->
-
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
     <!--<![endif]-->
-
-
 
     <!-- Web Font / @font-face : END -->
 
-
-
     <!-- CSS Reset : BEGIN -->
-
     <style>
 
-
-
         /* What it does: Remove spaces around the email design added by some email clients. */
-
         /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-
         html,
-
         body {
-
             margin: 0 !important;
-
             padding: 0 !important;
-
             height: 100% !important;
-
             width: 100% !important;
-
         }
-
-
 
         /* What it does: Stops email clients resizing small text. */
-
         * {
-
             -ms-text-size-adjust: 100%;
-
             -webkit-text-size-adjust: 100%;
-
         }
-
-
 
         /* What it does: Centers email on Android 4.4 */
-
         div[style*="margin: 16px 0"] {
-
             margin: 0 !important;
-
         }
-
-
 
         /* What it does: Stops Outlook from adding extra spacing to tables. */
-
         table,
-
         td {
-
             mso-table-lspace: 0pt !important;
-
             mso-table-rspace: 0pt !important;
-
         }
-
-
 
         /* What it does: Fixes webkit padding issue. */
-
         table {
-
             border-spacing: 0 !important;
-
             border-collapse: collapse !important;
-
             table-layout: fixed !important;
-
             margin: 0 auto !important;
-
         }
-
-
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
-
         img {
-
             -ms-interpolation-mode:bicubic;
-
         }
-
-
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
-
         a {
-
             text-decoration: none;
-
             color: #297DBB;
-
         }
-
-
 
         /* What it does: A work-around for email clients meddling in triggered links. */
-
         a[x-apple-data-detectors],  /* iOS */
-
         .unstyle-auto-detected-links a,
-
         .aBn {
-
             border-bottom: 0 !important;
-
             cursor: default !important;
-
             color: inherit !important;
-
             text-decoration: none !important;
-
             font-size: inherit !important;
-
             font-family: inherit !important;
-
             font-weight: inherit !important;
-
             line-height: inherit !important;
-
         }
-
-
 
         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-
         .a6S {
-
             display: none !important;
-
             opacity: 0.01 !important;
-
         }
-
-
 
         /* What it does: Prevents Gmail from changing the text color in conversation threads. */
-
         .im {
-
             color: inherit !important;
-
         }
-
-
 
         /* If the above doesn't work, add a .g-img class to any image in question. */
-
         img.g-img + div {
-
             display: none !important;
-
         }
-
-
 
         .email-promo p {
-
             margin: 0 auto 5px auto;
-
             font-size: 14px;
-
         }
-
-
 
         /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-
         /* Create one of these media queries for each additional viewport size you'd like to fix */
 
-
-
         /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-
         @media  only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-
             u ~ div .email-container {
-
                 min-width: 320px !important;
-
             }
-
         }
-
         /* iPhone 6, 6S, 7, 8, and X */
-
         @media  only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-
             u ~ div .email-container {
-
                 min-width: 375px !important;
-
             }
-
         }
-
         /* iPhone 6+, 7+, and 8+ */
-
         @media  only screen and (min-device-width: 414px) {
-
             u ~ div .email-container {
-
                 min-width: 414px !important;
-
             }
-
         }
-
-
 
     </style>
 
-
-
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
-
     <!--[if gte mso 9]>
-
     <xml>
-
         <o:OfficeDocumentSettings>
-
             <o:AllowPNG/>
-
             <o:PixelsPerInch>96</o:PixelsPerInch>
-
         </o:OfficeDocumentSettings>
-
     </xml>
-
     <![endif]-->
-
-
 
     <!-- CSS Reset : END -->
 
-
-
     <!-- Progressive Enhancements : BEGIN -->
-
     <style>
 
-
-
 	    /* What it does: Hover styles for buttons */
-
 	    .button-td,
-
 	    .button-a {
-
 	        transition: all 100ms ease-in;
-
 	    }
-
 	    .button-td-primary:hover,
-
 	    .button-a-primary:hover {
-
 	        background: #3395DD !important;
-
 	        border-color: #3395DD !important;
-
 	    }
-
-
 
 	    /* Media Queries */
-
 	    @media  screen and (max-width: 600px) {
 
-
-
 	        /* What it does: Adjust typography on small screens to improve readability */
-
 	        .email-container p {
-
 	            font-size: 17px !important;
-
 	        }
-
-
 
 	    }
 
-
-
     </style>
-
     <!-- Progressive Enhancements : END -->
 
-
-
 </head>
-
 <!--
-
 	The email background color (#F5F5F5) is defined in three places:
-
 	1. body tag: for most email clients
-
 	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
-
 	3. mso conditional: For Windows 10 Mail
-
 -->
-
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #F5F5F5;">
-
 	<center style="padding: 20px; background-color: #F5F5F5;">
-
     <!--[if mso | IE]>
-
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F5F5F5;">
-
     <tr>
-
     <td>
-
     <![endif]-->
-
         <!--
-
             Set the email width. Defined in two places:
-
             1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
-
             2. MSO tags for Desktop Windows Outlook enforce a 600px width.
-
         -->
-
         <div style="max-width: 600px; margin: 20px;" class="email-container">
-
             <!--[if mso]>
-
             <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
-
             <tr>
-
             <td>
-
             <![endif]-->
 
-
-
 	        <!-- Email Body : BEGIN -->
-
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-
 		        <!-- Email Header : BEGIN -->
-
 	            <tr>
-
 	                <td style="padding: 10px 0 20px 0; text-align: center">
-
                                                     <img src="https://lift.opensnow.com/email/opensnow_mark.png" height="50" width="50" alt="OpenSnow">
-
                                                 	                </td>
-
 	            </tr>
-
 		        <!-- Email Header : END -->
 
-
-
                 <!-- Hero Image Block -->
-
                                     <tr>
-
                         <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
-
                             <img src="https://lift.opensnow.com/email/emailheader-snow10.jpg" width="600" height="" alt="OpenSnow Header Image" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
-
                         </td>
-
                     </tr>
-
                 
-
                 <!-- Main Content Block -->
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
-
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-
                             <tr>
-
                                 <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 20px; color: #555555;">
-
                                     <h1 style="margin: 0 0 20px 0; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 28px; line-height: 36px; color: #333333; font-weight: 700;">    Utah Daily Snow
-
 </h1>
 
-
-
                                     <div style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5;">
-
     <div class="subtitle" style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 18px; margin: 10px 0;">
-
-        Friday Dump Fest
-
+        Record Snowpack + Monster Storm
     </div>
 
-
-
-    <p>By Forecaster Evan Thayer<br>Friday March 31, 2023 6:12am MDT</p>
-
-
+    <p>By Forecaster Evan Thayer<br>Saturday April 1, 2023 7:33am MDT</p>
 
     <div style="margin: 25px auto;">
-
         <table align="center" role="presentation" cellpadding="0" border="0" style="margin: auto;">
-
             <tr>
-
                 <td class="button-td button-td-primary" style="border-radius: 4px; background: #297DBB;">
-
-                     <a class="button-a button-a-primary" href="https://opensnow.com/dailysnow/utah/post/30340" style="background: #297DBB; border: 1px solid #297DBB; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 18px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px; text-align: center;">View This Post on OpenSnow</a>
-
+                     <a class="button-a button-a-primary" href="https://opensnow.com/dailysnow/utah/post/30360" style="background: #297DBB; border: 1px solid #297DBB; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 18px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px; text-align: center;">View This Post on OpenSnow</a>
                 </td>
-
             </tr>
-
         </table>
-
     </div>
 
-
-
-    <p><h4 class="ds-section">Summary</h4><p>Heavy snow continues today in a northwest flow with truly impressive storm totals. A break late today through Saturday. Clouds and chances for light showers by Sunday with a potent storm for northern Utah Sunday night through at least Tuesday. Significant snowfall is once again likely. A drier pattern is possible late next week. </p><h4 class="ds-section">Short Term Forecast</h4><p>An absolutely huge morning of snow in Northern Utah. Snow showers yesterday left a few inches, but the heavy stuff arrived once again overnight and it has absolutely dumped. 16-20&quot; so far in the Cottonwood Canyons.&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/168026387360083b493fd159ac49230c2c5a471960.gif" alt="" width="100%" height="auto"></p>  <p><img src="https://lift.opensnow.com/media-images/16802639546585aa7be32769ae29e45aa75dcafa2b.gif" alt="" width="100%" height="auto"></p>  <p>16&quot; at Snowbasin!&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/1680263900f1f46b55fc9e6c4031b35d12476ca3a2.gif" alt="" width="100%" height="auto"></p>  <p>14&quot; at Park City</p>  <p><img src="https://lift.opensnow.com/media-images/168026392736d08ea7fb6dfb9b56a6069babdac745.gif" alt="" width="100%" height="auto"></p>  <p>8&quot; reported at PowMow, 8&quot; at Deer Valley, 11&quot; at Sundance. 6&quot; at Eagle Point/Brian Head.&nbsp;</p>  <p>I can't believe how many mornings I've woken up this year and looked at webcams of absolute dumpage. The storm totals are now ranging from 18-35&quot; since Wednesday PM. Alta has, for the first time ever, reached 800&quot; of snow before the end of their season.</p>  <p><img src="https://lift.opensnow.com/media-images/16802644827dcf25f1178d3efd07a2933397df5b2f.PNG" alt="" width="100%" height="auto"></p>  <p>It is also now the snowiest month EVER in the history of the Alta-Collins snow plot which dates back to 1980.&nbsp;</p>  <p>I am truly out of words to describe what is going on. We are shattering records left and right. And, it is not going to stop snowing.&nbsp;</p>  <p>Snow continues this morning into early afternoon with another 6-12&quot; in favored areas like the Cottonwoods. Elsewhere, 4-8&quot; of additional snow is possible. If you can get to the mountain today, conditions are going to be epic... I'm talking all-time levels of deep.&nbsp;</p>  <p>We are going to have a break late today through the day on Saturday. Hopefully we will get some good terrain openings and not too much sun, which is quick to ruin snow this time of year.&nbsp;</p>  <p>The next storm starts approaching on Sunday. We could see some snow showers way up north as early as Sunday, but the main part of the storm should sag into the area Sunday night into early Monday. This system has plenty of moisture and is somewhat stalling over northern Utah. Heavy snow is likely through Monday into Tuesday. The GFS shows another 2.5&quot; of liquid is possible in Upper LCC by midweek:</p>  <p><img src="https://lift.opensnow.com/media-images/168026439193e8ce523d2c8e5ff8538d46d8963040.PNG" alt="" width="100%" height="auto"></p>  <p>This is quite a lot of liquid, but it's backed up by the GEFS ensembles which also show a mean of 2+&quot; of liquid:</p>  <p><img src="https://lift.opensnow.com/media-images/16802644285cadef973a6c73f06742320c0038703a.PNG" alt="" width="100%" height="auto"></p>  <p>Even the WPC is showing over 2&quot; for this period:</p>  <p><img src="https://lift.opensnow.com/media-images/168026445406b1462db282b02419d43233f2f33479.png" alt="" width="100%" height="auto"></p>  <p>All this is leading to high confidence that we will get clobbered. Again. Cold temperatures will also allow for high snow ratios, so we should really pile the snow up. My early guess is 1-2&quot; of liquid for 1-2+ feet of snow. The Cottonwoods, which again look particularly favored, could get significantly more if things come together right.&nbsp;</p>  <p>Another foot of snow today could bring Alta to 812&quot; on the season by tonight. We could feasibly get close to 850&quot; by the middle of the upcoming week. Unreal.&nbsp;</p>  <p></p><h4 class="ds-section">Extended Forecast</h4><p>It does look like we are going to see a break in the snow late next week into next weekend. It's hard to say just how long this break will last, but it should be the warmest, driest weather we've seen in a while. Only another 2-5 feet of snow to go before we get there. ;-)</p>  <p>Evan | OpenSnow</p></p>
-
-
+    <p><h4 class="ds-section">Summary</h4><p>We take a look at our record snowpack, which continues to grow. We have a break today (Saturday) before the next system begins to move in Sunday with heavy snow Sunday night through Tuesday. A drier pattern is likely for late week into next weekend. </p><h4 class="ds-section">Short Term Forecast</h4><p><strong>Snowpack</strong>:</p>  <p>We are going to start today by looking at our snowpack numbers as it's the first of the month. Simply put, they are great. Record snow depths in many areas and a statewide average that is the highest we've ever seen since 1980 when we started putting in snotel sites. You can see us at record levels here.</p>  <p><img src="https://lift.opensnow.com/media-images/168035408330b10572b271a9b3869c6473880a2891.PNG" alt="" width="100%" height="auto"></p>  <p>The previous highest we ever reached was a statewide average of 26&quot; of SWE. Right now we sit at 28&quot; of SWE. The <a rel="noopener" href="https://www.nrcs.usda.gov/wps/portal/wcc/home/quicklinks/states/utah/" target="_blank">NRCS</a>, which puts out this map, posted that they have done some work to make estimates on years with potentially more snow prior to the snotel era (1980). The winter of 1951-52 is estimated to have had a statewide SWE average of 28.8&quot;. However this estimate is using only monthly, manual measurements from a few sites and then the rest is trying to extrapolate an average based on that which is difficult to do accurately to say the least.&nbsp;</p>  <p>With these record numbers, it may come as no surprise that the entire state is seeing a killer snow pack with some areas 200% of median or more -- which is mind-boggling for this date which is often the peak snowpack time:</p>  <p><img src="https://lift.opensnow.com/media-images/16803542847beb29242e4e76fa42d7db7515953cfd.PNG" alt="" width="100%" height="auto"></p>  <p>Looking at individual sites, we can start up north. Tony Grove Lake near Beaver Mountain has somewhat lagged behind all year. When I say that, I mean that when other areas have been &gt;200% of median, it has been in the 130% of median range. Still, well above normal, but not in record territory. A good last few weeks has allowed it to climb a bit, but not to record.</p>  <p><img src="https://lift.opensnow.com/media-images/1680354364a45e11af611f574631693c5cf62f76ab.PNG" alt="" width="100%" height="auto"></p>  <p>It is at 156% of median which is&nbsp;<em>only&nbsp;</em>good enough for the 3rd best year there. What an embarrassment!&nbsp;</p>  <p>A bit farther south and we are back to record territory with Ben Lomond Peak showing HUGE snowpack numbers:</p>  <p><img src="https://lift.opensnow.com/media-images/1680354461d3d01871ec31cf097166c9facbbeb37c.PNG" alt="" width="100%" height="auto"></p>  <p>It's their snowiest season ever. They are nearly to 80&quot; of SWE which is the highest in the state. It's also 240% of median! Jim Steenburgh of the U of U posted yesterday that he believed this might be the single highest snowpack reading ever in the state of Utah -- and it's only going to go up in the next few days!&nbsp;</p>  <p>What may be even more impressive is that Ben Lomond Trail on the eastern base of the mountain has more than 45&quot; of SWE at an elevation of less than 6000 feet:</p>  <p><img src="https://lift.opensnow.com/media-images/16803545864f1d566725baa9e7464456f635f52925.PNG" alt="" width="100%" height="auto"></p>  <p>To put that in perspective, that's a bigger snowpack than Snowbird snotel site typically sees in an average year! And this site is at 5800 ft! Wow!&nbsp;</p>  <p>Speaking of Snowbird, let's look at this site:</p>  <p><img src="https://lift.opensnow.com/media-images/1680354666d29d17df2ea37d763f4facec7b9b1857.PNG" alt="" width="100%" height="auto"></p>  <p>It's the biggest snow pack&nbsp;<em>to-date</em>, but you may be surprised to know that this is not the biggest snowpack ever at Snowbird. In fact, there are a few years that peaked bigger that where we currently sit:</p>  <p><img src="https://lift.opensnow.com/media-images/16803547299419344bf4a602c88ab5dd8c96359584.PNG" alt="" width="100%" height="auto"></p>  <p>The king of snowpacks was still 2011 when we plateaued up at around 75&quot; of SWE for a month. Right now, we are at 66.8&quot;, so we need another 8&quot; of SWE to get to 2011 levels -- might be a tough ask if I'm honest. I think we will come up short, even if we get 3+&quot; of that this week.&nbsp;</p>  <p>Farther south, record snowpack at Timpanogos Divide with an astonishing 272% of median:</p>  <p><img src="https://lift.opensnow.com/media-images/16803548370ca0dc44c0404552cc8f5e7d5fe6d9cd.PNG" alt="" width="100%" height="auto"></p>  <p>No surprise, as neighboring Sundance has had a record snow year. Farther south, Big Flat near Eagle Point also on a record pace:</p>  <p><img src="https://lift.opensnow.com/media-images/16803549175490a1af2846356d894fc2548064543c.PNG" alt="" width="100%" height="auto"></p>  <p>...and finally, Midway Valley nearish to Brian Head:</p>  <p><img src="https://lift.opensnow.com/media-images/168035494260615a6ccad84e502351542fa2aac27d.PNG" alt="" width="100%" height="auto"></p>  <p>Both of these southern Utah sites are at &gt;200% of median for the date. Perhaps the most impressive thing about this year's snowpack is how widely distributed it is across the entire state. It would have been one thing for one section of the state to set records, but for almost everybody to be setting individual site records is impressive -- and speaks to why we are crushing the statewide average record.&nbsp;</p>  <p>I have been fielding a lot of questions regarding runoff and what this will mean for flooding. I am not an expert. However, I think a repeat of 1983 is quite unlikely. Better infrustructure for one, and that year featured a snowpack that peaked in mid-to-late May, then saw summer arrive all at once. It was the perfect storm. I doubt that will happen again. Rather, I expect this to be a lot like 2011 when we saw a couple of months of nuisance flooding for many areas, but major flooding was largely averted. The best case scenario for us is that we see a couple of weeks in April of warm temps so we can start melting out the mid to lower elevations first, then the upper elevations will melt out mostly in May.&nbsp;</p>  <p><strong>Forecast</strong>:</p>  <p>Yesterday's storm continued to bring snow through much of the morning and even afternoon hours. Another 6-15&quot; of snow was picked up. Snowfall totals in northern Utah ranged from 20-46&quot; from Wednesday PM through Friday PM. Alta and Snowbird were unable to open yesterday. Alta and Brighton both went over 800&quot; of snow on the season and now sit at 809&quot; and 815&quot; respectively.&nbsp;</p>  <p><strong>Mind-blowing statistic</strong>: Since the first snow at Alta on October 22, 2022. They have averaged over 5&quot; of snow per day! Or, about 3 FEET of snow per week since the first snow of the season.&nbsp;</p>  <p>We have a MONSTER storm that could impact us for the start of the upcoming week. Today (Saturday) is a break in the action, but we will see winds pick up already with clouds increasing later today. We then see some moisture reach far northern Utah tonight and sag south overnight into Sunday morning. We could see generally light snow showers with light accumulation tomorrow in northern Utah mountains.&nbsp;</p>  <p>The heavy snow arrives Sunday night and continues through Monday as the front sags through the region. Then, behind the front, heavy snow continues -- especially in the Cottonwoods -- in a long-duration, cold, unstable northwest flow. It looks like a very good setup to my eyes for heavy snowfall in LCC in particular. NBM totals through Wednesday show decent liquid:</p>  <p><img src="https://lift.opensnow.com/media-images/1680355633b17b822f0bad35804fddba7bca8e5491.png" alt="" width="100%" height="auto"></p>  <p>While already in the 1-2.25&quot; range, I suspect these amounts will increase as we get within range of some of the higher resolution models that do a better job with orographics and lake enhancement. Here is the downscaled GFS plumes showing a mean of over 2.5&quot; of liquid for LCC:</p>  <p><img src="https://lift.opensnow.com/media-images/1680355706ba5a2f7a7ee8566cfe8a86e456c1a9bf.PNG" alt="" width="100%" height="auto"></p>  <p>All ensembles are above 1.5&quot; with most in the 2-3&quot; range and a mean of about 2.6&quot;. I would not be surprised if we see even more with the orographic component of this storm. That means 20-30&quot; of snow for most areas with more possible for the Cottonwoods. I would not be shocked for LCC to approach 4 feet of snow if all goes according to plan.&nbsp;</p>  <p>It's a big storm on an already record or near-record snowpack. There won't be much time for the snow to settle or for folks to dig out, so it's likely to cause issues once again. I would not be surprised to see canyon or resort closures on Monday and/or Tuesday. But if they can get open, it will be epic!&nbsp;</p>  <p></p><h4 class="ds-section">Extended Forecast</h4><p>We should see snow slowly taper off Wednesday. Late next week into next weekend should be drier but could remain cool. We will see a gradual warm-up to near average temps. In general, the long-range models show us staying mostly dry:</p>  <p><img src="https://lift.opensnow.com/media-images/16803559258f233c09e80bea18557f00078983db28.png" alt="" width="100%" height="auto"></p>  <p>The vast majority of the above EPS ensembles keep us dry April 6-13. Then, perhaps we see chances for storms again closer to mid-month, but that's a long way out so we'll just keep an eye on that.&nbsp;</p>  <p>Evan | OpenSnow</p></p>
 
     <p style="margin-left:auto;margin-right:auto;text-align:center;font-size:14px;">
-
         <a href="https://opensnow.com/user/settings/alerts">View or Edit your Daily Snow Alerts</a>
-
     </p>
 
 
-
-
-
 </div>
-
                                 </td>
-
                             </tr>
-
                         </table>
-
                     </td>
-
                 </tr>
 
-
-
                 
-
                                 <!-- OpenSnow App Buttons Block -->
-
                 <tr>
-
                     <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
-
                         &nbsp;
-
                     </td>
-
                 </tr>
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
-
                         <img src="https://lift.opensnow.com/email/opensnow_app_4.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
-
                     </td>
-
                 </tr>
-
                 <tr>
-
                     <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
-
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-
                             <tr>
-
                                 <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.5; color: #555555;">
-
                                     <h2 style="margin:0 auto;padding:0; font-size: 22px;">Download the OpenSnow App</h2>
-
                                     <p style="margin: 10px 0 0 0;">Enjoy the snow and don’t forget to download the OpenSnow Mobile App to track the next storm on-the-go!</p>
-
                                     <p style="margin:20px auto 0 auto; text-align: center;">
-
                                         <a href="https://itunes.apple.com/us/app/opensnow-ski-forecasts-reports/id780890907" target="_blank">
-
                                     		<img src="https://lift.opensnow.com/email/appstore.png" alt="Download on the App Store" width="auto" height="45">
-
                                     	</a>
-
                                     	<a href="https://play.google.com/store/apps/details?id=com.opensnow.android" target="_blank">
-
                                     		<img alt="Get it on Google Play" src="https://lift.opensnow.com/email/playstore.png" width="auto" height="45">
-
                                     	</a>
-
                                     </p>
-
                                 </td>
-
                             </tr>
-
                         </table>
-
                     </td>
-
                 </tr>
-
                 
-
                 
-
             </table>
-
             <!-- Email Body : END -->
 
-
-
             <!-- Email Footer : BEGIN -->
-
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-
                 <tr>
-
                     <td style="padding: 30px 20px 40px 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 12px; line-height: 1.3; text-align: center; color: #888888;">
-
                         You received this email because you are a registered user of OpenSnow &amp; OpenSummit.<br><br>
-
 						<strong>Cloudnine Weather LLC</strong><br><span class="unstyle-auto-detected-links">637B South Broadway #131, Boulder, Colorado 80305</span>
-
                         <br><br>
-
                         <a href="https://opensnow.com">opensnow.com</a> |
-
                         <a href="https://opensummit.com">opensummit.com</a>
-
                         <br><br>
-
                     </td>
-
                 </tr>
-
             </table>
-
             <!-- Email Footer : END -->
 
-
-
             <!--[if mso]>
-
             </td>
-
             </tr>
-
             </table>
-
             <![endif]-->
-
         </div>
 
-
-
     <!--[if mso | IE]>
-
     </td>
-
     </tr>
-
     </table>
-
     <![endif]-->
-
     </center>
-
-<img src="http://email.opensnow.com/wf/open?upn=YOMrZnYpAM3KItlLeHy3yvGPIIJNAJMiALAtBk6q-2BDU5n9Z0kJkQwaV6HEEza7v9nPJvuAC-2BPCLvEUNvPqdOXxP3G19vDoI7aitGcnKKZCAIvXSqwBnqblyncq62PVlmfJ0Zx5uRI4NhBbbiT9lohRROGoNuohMQgQlFy-2B8EPdAi2W-2FXK9LIQgSIdwp-2BZ8rWXqVU4F2d-2F849gN8uRpvKEnsfiJ6qByOCcVcowfjJJBJzYXqOHifgOwSGyYHOYn5yt3InGCJkRZV3-2FIIT6eBFQA-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"></body>
-
+<img src="http://email.opensnow.com/wf/open?upn=YOMrZnYpAM3KItlLeHy3yvGPIIJNAJMiALAtBk6q-2BDUrLs-2FILWvqCT-2Bi7Nhb-2FGI3Z1ArYjfsEsWplyPYwbv3WkfMlL7ACMCwA96vrECTt5P5jjzokcKN13SA-2F5Oe9p09pIKC2mzCdLjyBDYLfXlZWq6mTGUc2F2uWxeO01wKqzTEHgzKwkGtQ6Gonmo3evylidV4xbwoiVfIlC95MnrXFmiJpRHRAJG42nwxUpzpwIAYIRS114fmfoUHlqVlprFlsm7pNPzZwNRaCcRMyoYQ1Q-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"></body>
 </html>
-
-
 
