@@ -1,328 +1,656 @@
 <!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- utf-8 works for most cases -->
+
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+
     <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+
     <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
+
+
     <!-- Web Font / @font-face : BEGIN -->
+
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+
 
     <!-- TEMPLATE TAKEN FROM https://tedgoas.github.io/Cerberus/ -->
 
+
+
     <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+
     <!--[if mso]>
+
         <style>
+
             * {
+
                 font-family: sans-serif !important;
+
             }
+
         </style>
+
     <![endif]-->
 
+
+
     <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+
     <!--[if !mso]><!-->
+
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
     <!--<![endif]-->
+
+
 
     <!-- Web Font / @font-face : END -->
 
+
+
     <!-- CSS Reset : BEGIN -->
+
     <style>
 
+
+
         /* What it does: Remove spaces around the email design added by some email clients. */
+
         /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+
         html,
+
         body {
+
             margin: 0 !important;
+
             padding: 0 !important;
+
             height: 100% !important;
+
             width: 100% !important;
+
         }
+
+
 
         /* What it does: Stops email clients resizing small text. */
+
         * {
+
             -ms-text-size-adjust: 100%;
+
             -webkit-text-size-adjust: 100%;
+
         }
+
+
 
         /* What it does: Centers email on Android 4.4 */
+
         div[style*="margin: 16px 0"] {
+
             margin: 0 !important;
+
         }
+
+
 
         /* What it does: Stops Outlook from adding extra spacing to tables. */
+
         table,
+
         td {
+
             mso-table-lspace: 0pt !important;
+
             mso-table-rspace: 0pt !important;
+
         }
+
+
 
         /* What it does: Fixes webkit padding issue. */
+
         table {
+
             border-spacing: 0 !important;
+
             border-collapse: collapse !important;
+
             table-layout: fixed !important;
+
             margin: 0 auto !important;
+
         }
+
+
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
+
         img {
+
             -ms-interpolation-mode:bicubic;
+
         }
+
+
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+
         a {
+
             text-decoration: none;
+
             color: #297DBB;
+
         }
+
+
 
         /* What it does: A work-around for email clients meddling in triggered links. */
+
         a[x-apple-data-detectors],  /* iOS */
+
         .unstyle-auto-detected-links a,
+
         .aBn {
+
             border-bottom: 0 !important;
+
             cursor: default !important;
+
             color: inherit !important;
+
             text-decoration: none !important;
+
             font-size: inherit !important;
+
             font-family: inherit !important;
+
             font-weight: inherit !important;
+
             line-height: inherit !important;
+
         }
+
+
 
         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+
         .a6S {
+
             display: none !important;
+
             opacity: 0.01 !important;
+
         }
+
+
 
         /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+
         .im {
+
             color: inherit !important;
+
         }
+
+
 
         /* If the above doesn't work, add a .g-img class to any image in question. */
+
         img.g-img + div {
+
             display: none !important;
+
         }
+
+
 
         .email-promo p {
+
             margin: 0 auto 5px auto;
+
             font-size: 14px;
+
         }
+
+
 
         /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+
         /* Create one of these media queries for each additional viewport size you'd like to fix */
 
+
+
         /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+
         @media  only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+
             u ~ div .email-container {
+
                 min-width: 320px !important;
+
             }
+
         }
+
         /* iPhone 6, 6S, 7, 8, and X */
+
         @media  only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+
             u ~ div .email-container {
+
                 min-width: 375px !important;
+
             }
+
         }
+
         /* iPhone 6+, 7+, and 8+ */
+
         @media  only screen and (min-device-width: 414px) {
+
             u ~ div .email-container {
+
                 min-width: 414px !important;
+
             }
+
         }
+
+
 
     </style>
 
+
+
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+
     <!--[if gte mso 9]>
+
     <xml>
+
         <o:OfficeDocumentSettings>
+
             <o:AllowPNG/>
+
             <o:PixelsPerInch>96</o:PixelsPerInch>
+
         </o:OfficeDocumentSettings>
+
     </xml>
+
     <![endif]-->
+
+
 
     <!-- CSS Reset : END -->
 
+
+
     <!-- Progressive Enhancements : BEGIN -->
+
     <style>
 
+
+
 	    /* What it does: Hover styles for buttons */
+
 	    .button-td,
+
 	    .button-a {
+
 	        transition: all 100ms ease-in;
+
 	    }
+
 	    .button-td-primary:hover,
+
 	    .button-a-primary:hover {
+
 	        background: #3395DD !important;
+
 	        border-color: #3395DD !important;
+
 	    }
+
+
 
 	    /* Media Queries */
+
 	    @media  screen and (max-width: 600px) {
 
+
+
 	        /* What it does: Adjust typography on small screens to improve readability */
+
 	        .email-container p {
+
 	            font-size: 17px !important;
+
 	        }
+
+
 
 	    }
 
+
+
     </style>
+
     <!-- Progressive Enhancements : END -->
 
+
+
 </head>
+
 <!--
+
 	The email background color (#F5F5F5) is defined in three places:
+
 	1. body tag: for most email clients
+
 	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+
 	3. mso conditional: For Windows 10 Mail
+
 -->
+
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #F5F5F5;">
+
 	<center style="padding: 20px; background-color: #F5F5F5;">
+
     <!--[if mso | IE]>
+
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F5F5F5;">
+
     <tr>
+
     <td>
+
     <![endif]-->
+
         <!--
+
             Set the email width. Defined in two places:
+
             1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
+
             2. MSO tags for Desktop Windows Outlook enforce a 600px width.
+
         -->
+
         <div style="max-width: 600px; margin: 20px;" class="email-container">
+
             <!--[if mso]>
+
             <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
+
             <tr>
+
             <td>
+
             <![endif]-->
 
+
+
 	        <!-- Email Body : BEGIN -->
+
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+
 		        <!-- Email Header : BEGIN -->
+
 	            <tr>
+
 	                <td style="padding: 10px 0 20px 0; text-align: center">
+
                                                     <img src="https://lift.opensnow.com/email/opensnow_mark.png" height="50" width="50" alt="OpenSnow">
+
                                                 	                </td>
+
 	            </tr>
+
 		        <!-- Email Header : END -->
 
+
+
                 <!-- Hero Image Block -->
+
                                     <tr>
+
                         <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
+
                             <img src="https://lift.opensnow.com/email/emailheader-snow10.jpg" width="600" height="" alt="OpenSnow Header Image" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
+
                         </td>
+
                     </tr>
+
                 
+
                 <!-- Main Content Block -->
+
                 <tr>
+
                     <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
+
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+
                             <tr>
+
                                 <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 20px; color: #555555;">
+
                                     <h1 style="margin: 0 0 20px 0; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 28px; line-height: 36px; color: #333333; font-weight: 700;">    Jackson Hole Daily Snow
+
 </h1>
 
+
+
                                     <div style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5;">
+
     <div class="subtitle" style="font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 18px; margin: 10px 0;">
-        Dry &amp; overcast Tuesday, then back into the flow
+
+        Heavy snow and strong winds this weekend
+
     </div>
 
-    <p>By Meteorologist Alan Smith<br>Tuesday March 28, 2023 9:13am MDT</p>
+
+
+    <p>By Meteorologist Alan Smith<br>Friday March 31, 2023 9:27am MDT</p>
+
+
 
     <div style="margin: 25px auto;">
+
         <table align="center" role="presentation" cellpadding="0" border="0" style="margin: auto;">
+
             <tr>
+
                 <td class="button-td button-td-primary" style="border-radius: 4px; background: #297DBB;">
-                     <a class="button-a button-a-primary" href="https://opensnow.com/dailysnow/jacksonhole/post/30276" style="background: #297DBB; border: 1px solid #297DBB; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 18px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px; text-align: center;">View This Post on OpenSnow</a>
+
+                     <a class="button-a button-a-primary" href="https://opensnow.com/dailysnow/jacksonhole/post/30350" style="background: #297DBB; border: 1px solid #297DBB; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 18px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px; text-align: center;">View This Post on OpenSnow</a>
+
                 </td>
+
             </tr>
+
         </table>
+
     </div>
 
-    <p><h4 class="ds-section">Summary</h4><p>Conditions will largely remain dry through Tue &amp; the first half of Wed aside from some stray flurries, while skies will be mostly cloudy as some high-level moisture arrives in advance of our next storm. Snow will pick up Wed afternoon into Wed night as moisture arrives from the south, with additional snow showers Thu-Fri. A stronger storm cycle is then possible this weekend.</p><h4 class="ds-section">Short Term Forecast</h4><p><strong>Forecast for Tuesday:</strong></p>  <p>A quiet day can be expected, giving us one more chance to catch our breathes before heading back into an active pattern.</p>  <p>While quiet, high-level moisture has arrived in advance of our next storm system, and skies are starting out overcast on Tuesday morning as a result. Mostly cloudy skies can be expected throughout the day, and I wouldn't rule out some flurries, but no meaningful snow accumulations are expected.</p>  <p><img src="https://lift.opensnow.com/media-images/1680014188645f7fd16525cb5f9ddb04a9c50cceba.jpeg" alt="" width="100%" height="auto"></p>  <p>Temperatures are starting out cold (near zero) on Tuesday morning, but will warm up on Tuesday afternoon compared to previous days with highs reaching the mid 20s at 9,000 feet and mid/upper 30s in the valleys as milder air arrives from the south.</p>  <p>Ridgetop winds will also be higher on Wednesday out of the southwest at 10-20 mph with gusts to 25-30 mph.</p>  <p><strong>Forecast for Wednesday to Wednesday Night:</strong></p>  <p>A strong low pressure system will approach the Southern California Coast on Wednesday, and a surge of moisture and energy will reach Jackson Hole from the south later on Wednesday with snow showers beginning on Wednesday afternoon, before picking up in coverage and intensity on Wednesday night.</p>  <p><img src="https://lift.opensnow.com/media-images/16800146378f174ab46a10d39446c906f183206391.jpeg" alt="" width="100%" height="auto"></p>  <p>Temperatures will be milder and snow quality wetter with this wave as highs reach the upper 20s at 9,000 feet on Wednesday afternoon and low 40s in the valleys. Lows on Wednesday night will be in the low 20s at 9,000 feet and low 30s in the valley, with snow-liquid ratios of around 9:1 to 10:1.</p>  <p>Southerly flow will favor the Southern Teton Range including Jackson Hole and Teton Pass as well as the Southern Jackson Hole Valley including Snow King, whereas Targhee and Teton Valley will be less favored.&nbsp;</p>  <p><em>Here is my snow forecast for Wednesday through Wednesday night:</em></p>  <ul>  <li>3-5&quot; - Jackson Hole above 8,000 feet</li>  <li>2-4&quot; - Snow King</li>  <li>1-2&quot; - Jackson Hole Valley</li>  <li>1-2&quot; - Grand Targhee</li>  <li>TR-0.5&quot; - Teton Valley</li>  </ul>  <p>We will be right on the northern fringe of the storm track, but a strong jet stream will be working its way into Western Wyoming, so we'll need to keep an eye on this for possible changes to the forecast (by tomorrow morning) just in case the storm track inches just a bit further north.&nbsp;</p>  <p>Ridgetop winds will be strongest on Wednesday afternoon and evening out of the south at 10-20 mph with gusts to 30-35 mph, before decreasing later Wednesday night.</p>  <p><strong>Forecast for Thursday to Thursday Night:</strong></p>  <p>Snow will linger across the southern zones on Thursday morning, then we may see a relative lull in the action from later Thursday through Thursday afternoon with lighter/more intermittent snow showers.</p>  <p>A secondary wave will then arrive from the west on Thursday night with snow showers picking back up again overnight. Winds aloft will become west/northwest overnight which will be more favorable for Targhee compared to Wednesday's wave.</p>  <p><img src="https://lift.opensnow.com/media-images/16800151848b60426f8a34062568593f6915cab11d.jpeg" alt="" width="100%" height="auto"></p>  <p>Colder air will also move in early on Thursday and snow quality on Thursday and Thursday night will be drier across the higher elevations (12:1 to 13:1 ratios), while still fairly wet down low.</p>  <p><em>Here is my snow forecast for Thursday through Thursday night:</em></p>  <ul>  <li>2-4&quot; - Jackson Hole above 8,000 feet</li>  <li>2-4&quot; - Grand Targhee</li>  <li>1-2&quot; - Snow King</li>  <li>TR-1&quot; - Jackson Hole Valley</li>  <li>TR-1&quot; - Teton Valley</li>  </ul>  <p>Winds on Thursday will be light to moderate out of the west/southwest during the day and west/northwest on Thursday night.</p>  <p><strong>Forecast for Friday to Friday Night:</strong></p>  <p>Snow showers will continue throughout the day on Friday and into Friday night. This activity will be more orographic in nature, favoring the higher terrain with less snow shower activity for the lower elevations, especially on the east side of the Tetons.</p>  <p>Winds aloft will be out of the west/northwest initially on Friday before turning west/southwest on Friday night. Wind speeds will pick up a bit however on Friday afternoon and Friday night with speeds of 15-25 mph and gusts to 30-40 mph across the higher terrain.</p>  <p>Temperatures will also remain on the colder side on Friday with snow-liquid ratios of around 15:1 across the mid to higher elevations.&nbsp;</p>  <p><em>Here is my snow forecast for Friday through Friday night:</em></p>  <ul>  <li>3-6&quot; - Jackson Hole above 8,000 feet</li>  <li>3-6&quot; - Grand Targhee</li>  <li>1-2&quot; - Snow King</li>  <li>TR-1&quot; - Jackson Hole Valley</li>  <li>TR-1&quot; - Teton Valley</li>  </ul>  <p><strong>Total Snowfall from Wednesday through Friday:</strong></p>  <p>Three-day snow totals from Wednesday AM through Saturday AM will generally range from 6-15 inches in the Tetons, 4-8 inches at Snow King, and a trace to 4 inches in the valleys.&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/1680015824d22690d17e6e5b3719e53689b772bf87.jpeg" alt="" width="100%" height="auto"></p>  <p><img src="https://lift.opensnow.com/media-images/1680015596d22690d17e6e5b3719e53689b772bf87.jpeg" alt="" width="100%" height="auto"></p>  <p><strong>Skiing Conditions:</strong></p>  <p>Given the time of year, snow conditions will be variable for much of this event with the best snow quality in protected north-facing terrain, especially up high. I would target Friday for the best conditions during this cycle once snow has been falling for a couple of days, but I also expect conditions to further improve this weekend with heavier snow possible.&nbsp;</p>  <p><strong>Travel Conditions:</strong></p>  <p>Accumulating snow will begin to impact Teton Pass during the afternoon/evening commute on Wednesday with snowpacked, slushy, and icy roads expected by Thursday morning. Both Thursday and Friday mornings will feature the highest impact conditions with some improvement expected during the afternoons.</p>  <p>Valley roads will be less impacted overall during this event, except for perhaps Thursday morning on the Jackson side where slushy roads will be possible first thing in the morning.&nbsp;</p><h4 class="ds-section">Extended Forecast</h4><p><strong>Outlook for Saturday (April 1) to Monday (April 3):</strong></p>  <p>A stronger storm is likely to impact the Tetons during this period as a large trough of low pressure works its way into the Pacific Northwest and a powerful jet stream noses its way toward Northwest Wyoming (still some question marks on exactly where the jet sets up though).&nbsp;</p>  <p>We could potentially see moderate to heavy snow over multiple days during this cycle, though we're still a bit too far out to get into details. Temperatures also look pretty cold for this time of year, which should result in medium to even low-density snow across the higher terrain.</p>  <p>While snowfall potential looks heavier, we could also end up with very strong winds at times, so that will be another element to keep an eye on as we get closer.</p>  <p><img src="https://lift.opensnow.com/media-images/1680016111833ea7880e11fede2c5b75adf59a7c41.jpeg" alt="" width="100%" height="auto"></p>  <p><strong>Outlook for April 4th and Beyond:</strong></p>  <p>Another storm or series of storms is possible during the April 4th-7th period with temperatures remaining well below average for early April. After that, I'm seeing some hints that we may finally head into a calmer pattern by the weekend of April 8th-9th (closing weekend at Jackson Hole) and into the week of April 10th. However, we are still far enough out that this could change.&nbsp;</p>  <p>Thanks so much for reading! Next update on Wednesday (March 29).</p>  <p>ALAN SMITH</p></p>
+
+
+    <p><h4 class="ds-section">Summary</h4><p>A moist westerly flow in between storm systems will result in snow showers across the Tetons on Friday with several more inches of snow expected. A strong storm will then impact the area Sat-Sat night with heavy snow and strong winds. Snowfall rates will decrease Sun but winds will remain strong. Additional snow showers are expected Mon-Wed on the back edge of a storm impacting Central/Eastern WY.</p><h4 class="ds-section">Short Term Forecast</h4><p><strong>Snow Totals:</strong></p>  <p>Snowfall on Thursday-Thursday night ranged from 3-5 inches above 8,500 feet and a trace to an inch across the lower elevations. The west side of the Tetons did a little better than the east side with Targhee reporting 5 inches.</p>  <p>Here are the latest 2-day snow totals as of Friday AM:</p>  <ul>  <li>8&quot; - Grand Targhee Chief Joseph Bowl</li>  <li>7&quot; - Surprise Meadow</li>  <li>6&quot; - Jackson Hole Rendezvous Bowl</li>  <li>6&quot; - Jackson Hole Raymer Plot</li>  <li>3&quot; - Snow King</li>  <li>3&quot; - Togwotee Pass</li>  <li>3&quot; - Driggs</li>  <li>1&quot; - Jackson Hole Mid-Mountain</li>  <li>1&quot; - Jackson</li>  </ul>  <p>The Rendezvous Bowl Plot will finish the month of March with 117 inches of snow, making this the 4th snowiest March on record dating back to 1975. Grand Targhee's Chief Joseph Bowl Plots has reached 127 inches, making this the snowiest in the last 13 years (records only date back to 2011).</p>  <p><img src="https://lift.opensnow.com/media-images/1680273863645f7fd16525cb5f9ddb04a9c50cceba.jpeg" alt="" width="100%" height="auto"></p>  <p>For total snowfall through April 1st, the Rendezvous Bowl Plot is now in 3rd place with 558 inches and will likely move into second place with one more day to go.</p>  <p><img src="https://lift.opensnow.com/media-images/16802739108f174ab46a10d39446c906f183206391.jpeg" alt="" width="100%" height="auto"></p>  <p><strong>Forecast for Friday to Friday Night:</strong></p>  <p>Snow showers will continue throughout the day on Friday as we remain in a consistent moist westerly flow. Snowfall will largely be orographic/terrain-driven in nature, meaning the higher elevations will see the most consistent snowfall with lighter and more intermittent snow across the lower elevations.&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/16802739948b60426f8a34062568593f6915cab11d.jpeg" alt="" width="100%" height="auto"></p>  <p>Winds aloft will be out of the west/northwest from Friday morning through early afternoon, which will favor Grand Targhee and the west side of the Tetons the most, before veering to west/southwest from late Friday afternoon through Friday night.</p>  <p>Ridgetop wind speeds will increase on Friday afternoon to 10-20 mph with gusts to 25-35 mph. Winds will also gust to 20-25 mph in the valley. A gradual increase in ridgetop winds out of the west/southwest can also be expected on Friday night with speeds of 15-25 mph and gusts of 30-40 mph.</p>  <p><em>Here is my snow forecast for Friday AM through Saturday AM:</em></p>  <ul>  <li>4-8&quot; - Grand Targhee</li>  <li>3-7&quot; - Jackson Hole above 8,000 feet</li>  <li>1-2&quot; - Snow King</li>  <li>TR-1&quot; - Jackson Hole Valley</li>  <li>TR-1&quot; - Teton Valley</li>  </ul>  <p>Cold temperatures aloft will result in dry &amp; powdery snow quality across the higher elevations with snow-liquid ratios of around 15:1.</p>  <p>High temperatures at 9,000 feet will reach the low 20s on Friday with overnight lows in the mid teens. Highs in the valleys will reach the mid/upper 30s on Friday with overnight lows in the upper 20s to low 30s.</p>  <p><strong>Forecast for Saturday to Saturday Night:</strong></p>  <p>A strong storm will impact the area during this period. A strong jet stream will be nosing its way into Northwest Wyoming along with an abundance of moisture and energy. Since my last post, the jet has trended a little further south and into a better position to enhance snowfall rates across the Tetons.</p>  <p>Snow showers will ongoing through Saturday morning, then snowfall will become heavy and more widespread from Saturday afternoon through Saturday night.&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/1680274430d22690d17e6e5b3719e53689b772bf87.jpeg" alt="" width="100%" height="auto"></p>  <p><em>Here is my snow forecast for Saturday AM through Sunday AM:</em></p>  <ul>  <li>6-12&quot; - Jackson Hole above 8,000 feet</li>  <li>6-12&quot; - Grand Targhee</li>  <li>3-6&quot; - Snow King</li>  <li>1-3&quot; - Jackson Hole Valley</li>  <li>1-3&quot; - Teton Valley</li>  </ul>  <p>Most if not all of the valley accumulations will occur on Saturday night/early Sunday morning once temperatures fall below freezing and we lose solar radiation.</p>  <p>In addition to heavy snow, strong west/southwest winds will also be a factor in this storm. On Saturday morning ridgetop winds of 20-30 mph can be expected with gusts to 40-50 mph. On Saturday afternoon and Saturday night, winds will increase to 25-40 mph with gusts to 60-70 mph. Lift operations may very well be impacted on Saturday afternoon.&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/1680274445f0e429fe1fcc386dedbe52267f3222cf.jpeg" alt="" width="100%" height="auto"></p>  <p>Valley winds will also be strong out of the southwest during this event. On Saturday morning, winds of 15-20 mph with gusts to 25-30 mph can be expected. On Saturday afternoon and Saturday night, winds will increase to 20-30 mph with gusts of 40-50 mph possible.</p>  <p>This snow event will be slightly higher-density compared to Friday, but we should still end up with snow-liquid ratios of around 13:1 which is medium to relatively low density for this time of year.&nbsp;</p>  <p>High temperatures at 9,000 feet will reach the low/mid 20s on Saturday with overnight lows falling into the low teens as a cold front moves through late Saturday night. Highs in the valleys will top out in the upper 30s to near 40 early Saturday afternoon with overnight lows in the upper 20s.</p>  <p><strong>Forecast for Sunday to Sunday Night:</strong></p>  <p>The storm system will start to deepen further south across the Great Basin on Sunday and while we will have plenty of lingering moisture to work with, snowfall rates are trending lighter for the backside of this storm behind Saturday night's cold front.&nbsp;</p>  <p>Light to moderate snow will still continue throughout the day on Sunday and winds will remain strong as well, though not quite as strong as Saturday. Snow will then taper off to flurries on Sunday night with a relative lull in the pattern expected.</p>  <p><img src="https://lift.opensnow.com/media-images/1680274965833ea7880e11fede2c5b75adf59a7c41.jpeg" alt="" width="100%" height="auto"></p>  <p><em>Here is my snow forecast for Sunday AM through Monday AM:</em></p>  <ul>  <li>3-5&quot; - Jackson Hole above 8,000 feet</li>  <li>2-4&quot; - Grand Targhee</li>  <li>1-3&quot; - Snow King</li>  <li>TR-1&quot; - Jackson Hole Valley</li>  <li>TR-1&quot; - Teton Valley</li>  </ul>  <p>Strong west/southwest winds will remain a factor on Sunday and could still potentially impact lift operations. Ridgetop winds of 20-30 mph with gusts to 45-55 mph can be expected throughout the day on Sunday, while the valleys will see winds of 15-25 mph with gusts to 30-40 mph.</p>  <p><img src="https://lift.opensnow.com/media-images/16802749795a0884a68c5d54d618eb4e0de21f85ed.jpeg" alt="" width="100%" height="auto"></p>  <p>Sunday's backside snowfall will be lower density (15:1 ratios) as a colder airmass takes hold behind Saturday night's cold front. High temperatures at 9,000 feet will reach the mid teens on Sunday with overnight lows near 10 on Sunday night. Highs will reach the mid 30s in the valleys with lows in the mid teens on Sunday night.</p>  <p><strong>3-Day Snow Totals from Friday through Sunday:</strong></p>  <p><span>Total snowfall during this period will generally range from 1-2 feet in the Tetons, 5-11 inches at Snow King, and 1-5 inches in the valleys. Keep in mind that melting will also occur in the valleys during the afternoon hours.</span></p>  <p><span><img src="https://lift.opensnow.com/media-images/1680275424be3b587dc9677ec683446b8ae3c9496f.jpeg" alt="" width="100%" height="auto"></span></p>  <p><span><img src="https://lift.opensnow.com/media-images/168027543738e8ab215648a4188b29ffaf0a90f41d.jpeg" alt="" width="100%" height="auto"></span></p>  <p><span><img src="https://lift.opensnow.com/media-images/16802754501a0c6763ad7cfd5f834028aa3ca2b464.jpeg" alt="" width="100%" height="auto"></span></p>  <p><strong>Skiing Conditions:</strong></p>  <p>Snow adding up over multiple days will result in deep conditions on the slopes this weekend, but strong winds will likely impact lift operations at times – especially across the higher elevations where the deepest snow is expected.</p>  <p>For backcountry skiers, the high winds combined with new snow will also result in elevated avalanche danger.</p>  <p>Mid to low elevations will feature variable and in many cases crusty conditions due to lighter snowfall and warmer temperatures, not to mention strong winds.</p>  <p>Even though snowfall is expected to be minimal on Sunday night, Monday morning should still be a good time to get out and enjoy the fresh powder once winds have calmed down.</p>  <p><strong>Travel Conditions:</strong></p>  <p>Winter conditions will primarily be confined to Teton Pass and Togwotee Pass on Friday, save for some minor slush on the valley roads early on Friday. Road surfaces over the pass will feature a mix of snowpacked, slushy, and icy conditions with some melting possible in the afternoons.</p>  <p>Travel conditions will worsen over the weekend as the wind picks up while periods of moderate to heavy snow can also be expected. Blowing snow can be expected at times over the pass with the worst conditions expected from Saturday afternoon through Sunday afternoon (Saturday night/Sunday AM will be worst of all). Be prepared for potential road closures due to strong winds and/or accidents.&nbsp;</p>  <p>Slushy accumulations will be possible on the valley roads on Sunday morning with good pavement melting conditions expected on Saturday afternoon and Sunday. However, strong winds on both Saturday and Sunday will result in areas of blowing snow and drifting onto the roads in open/exposed areas. Sunday morning will be the highest impact travel period in the valleys.</p><h4 class="ds-section">Extended Forecast</h4><p><strong>Outlook for Monday (April 3) to Tuesday (April 4):</strong></p>  <p>The storm system will move across the Central Rockies and deepen into a closed low pressure system (winds blowing counterclockwise all the way around a center of low pressure) on Monday before slowing down as the center of the low moves into Northeast Colorado.</p>  <p>Strong southerly and easterly winds around the low will transport moisture into Central and Eastern Wyoming where heavy snow and potential blizzard conditions can be expected.</p>  <p>On the backside of this storm, we will see varying amounts of moisture reaching the Tetons from Monday afternoon through Tuesday night. But it's a messy setup as winds look highly variable. At times, we will likely see northeast or southeast winds which are not favorable for Teton snow, but we could also see southwest or northwest winds at times which would be more favorable.&nbsp;</p>  <p><img src="https://lift.opensnow.com/media-images/1680275837780fd53c345cc6b70d083ae4655f95a9.jpeg" alt="" width="100%" height="auto"></p>  <p>Bottom line, this is a tricky setup for the Tetons but generally not a pattern that is conducive to heavy snow. For now, I would expect anywhere from a dusting to a few inches on both Monday and Tuesday across the Tetons with light accumulations also possible in the valleys.&nbsp;</p>  <p><strong>Outlook for Wednesday (April 5) to Thursday (April 6):</strong></p>  <p>We could see enough lingering moisture for occasional flurries, especially on Wednesday, but unseasonably cold air behind a cold front on Tuesday will be the big story during this period.</p>  <p>While we are still the better part of a week away, highs are currently projected to be in the mid teens at 9,000 feet and near freezing in the valleys both days. Depending on cloud cover, we could potentially drop to near zero in the valleys, which would put us in record territory for this time of year.</p>  <p><strong>Outlook for April 7th-14th:</strong></p>  <p>Confidence is increasing that we will finally see some hints of spring during this period. A ridge of high pressure is projected to build over the Western U.S. during this period, resulting in dry conditions and more abundant sunshine through at least closing weekend at Jackson Hole (April 8th-9th) and likely into the start of the April 10th week as well.</p>  <p>Temperatures will start out well below average early in this period, but will warm up as time goes on and we should eventually approach more seasonal levels for this time of year (average highs in Jackson in early/mid April are in the low 50s).</p>  <p><img src="https://lift.opensnow.com/media-images/16802762162e54ada7a863b67be9607d77d1a54a31.jpeg" alt="" width="100%" height="auto"></p>  <p>Thanks so much for reading! Next update on Saturday (April 1).</p>  <p>ALAN SMITH&nbsp;</p>  <p></p></p>
+
+
 
     <p style="margin-left:auto;margin-right:auto;text-align:center;font-size:14px;">
+
         <a href="https://opensnow.com/user/settings/alerts">View or Edit your Daily Snow Alerts</a>
+
     </p>
 
 
+
+
+
 </div>
+
                                 </td>
+
                             </tr>
+
                         </table>
+
                     </td>
+
+                </tr>
+
+
+
+                
+
+                                <!-- OpenSnow App Buttons Block -->
+
+                <tr>
+
+                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
+
+                        &nbsp;
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
+
+                        <img src="https://lift.opensnow.com/email/opensnow_app_4.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
+
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+
+                            <tr>
+
+                                <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.5; color: #555555;">
+
+                                    <h2 style="margin:0 auto;padding:0; font-size: 22px;">Download the OpenSnow App</h2>
+
+                                    <p style="margin: 10px 0 0 0;">Enjoy the snow and don’t forget to download the OpenSnow Mobile App to track the next storm on-the-go!</p>
+
+                                    <p style="margin:20px auto 0 auto; text-align: center;">
+
+                                        <a href="https://itunes.apple.com/us/app/opensnow-ski-forecasts-reports/id780890907" target="_blank">
+
+                                    		<img src="https://lift.opensnow.com/email/appstore.png" alt="Download on the App Store" width="auto" height="45">
+
+                                    	</a>
+
+                                    	<a href="https://play.google.com/store/apps/details?id=com.opensnow.android" target="_blank">
+
+                                    		<img alt="Get it on Google Play" src="https://lift.opensnow.com/email/playstore.png" width="auto" height="45">
+
+                                    	</a>
+
+                                    </p>
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                    </td>
+
                 </tr>
 
                 
-                                <!-- OpenSnow App Buttons Block -->
-                <tr>
-                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td style="background-color: #ffffff; border-radius: 5px 5px 0 0;">
-                        <img src="https://lift.opensnow.com/email/opensnow_app_4.jpg" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block; border-radius: 5px 5px 0 0;" class="g-img">
-                    </td>
-                </tr>
-                <tr>
-                    <td style="background-color: #ffffff; border-radius: 0 0 5px 5px;">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td style="padding: 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.5; color: #555555;">
-                                    <h2 style="margin:0 auto;padding:0; font-size: 22px;">Download the OpenSnow App</h2>
-                                    <p style="margin: 10px 0 0 0;">Enjoy the snow and don’t forget to download the OpenSnow Mobile App to track the next storm on-the-go!</p>
-                                    <p style="margin:20px auto 0 auto; text-align: center;">
-                                        <a href="https://itunes.apple.com/us/app/opensnow-ski-forecasts-reports/id780890907" target="_blank">
-                                    		<img src="https://lift.opensnow.com/email/appstore.png" alt="Download on the App Store" width="auto" height="45">
-                                    	</a>
-                                    	<a href="https://play.google.com/store/apps/details?id=com.opensnow.android" target="_blank">
-                                    		<img alt="Get it on Google Play" src="https://lift.opensnow.com/email/playstore.png" width="auto" height="45">
-                                    	</a>
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
+
                 
-                
+
             </table>
+
             <!-- Email Body : END -->
 
+
+
             <!-- Email Footer : BEGIN -->
+
 	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+
                 <tr>
+
                     <td style="padding: 30px 20px 40px 20px; font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; font-size: 12px; line-height: 1.3; text-align: center; color: #888888;">
+
                         You received this email because you are a registered user of OpenSnow &amp; OpenSummit.<br><br>
+
 						<strong>Cloudnine Weather LLC</strong><br><span class="unstyle-auto-detected-links">637B South Broadway #131, Boulder, Colorado 80305</span>
+
                         <br><br>
+
                         <a href="https://opensnow.com">opensnow.com</a> |
+
                         <a href="https://opensummit.com">opensummit.com</a>
+
                         <br><br>
+
                     </td>
+
                 </tr>
+
             </table>
+
             <!-- Email Footer : END -->
 
+
+
             <!--[if mso]>
+
             </td>
+
             </tr>
+
             </table>
+
             <![endif]-->
+
         </div>
 
+
+
     <!--[if mso | IE]>
+
     </td>
+
     </tr>
+
     </table>
+
     <![endif]-->
+
     </center>
-<img src="http://email.opensnow.com/wf/open?upn=YOMrZnYpAM3KItlLeHy3yvGPIIJNAJMiALAtBk6q-2BDVc0xZVAwcRrAG2WsYCBMnJ8fYJoEEMIqCAMZHUVPncFbj-2FW6GQBVa9-2FCTmlV-2F-2FekuWoVenXvIixMFhygfWou3K9TuxpvNGVYA68SbLk8GX8G07b3pUymiSgjm9MucuzpTbr7gbn4RgojEkeM1O-2FFU7t5z028Bc-2FsctaR7TBkESX1C0YYcZPtsiizYvb2PIT-2F4HTzhZtefNQi0bgixhVONfsa0lfsT2dPEz5tdlKqu2mQ-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"></body>
+
+<img src="http://email.opensnow.com/wf/open?upn=YOMrZnYpAM3KItlLeHy3yvGPIIJNAJMiALAtBk6q-2BDUAqJiZSbZ-2BRuY3OfvT4vsB3f0cLyjWneUh9DVDAHy7SFnswDsbYTj0O6IeJ6oHGeJDPBD5CsBxtPqZuda-2F6hYati6MD21PQyvjRK3C4w9dLCeE1cqZx7sQ64zdtUQZnqczVrEu6wGwN3UuXW20tqOQ5fpk3ocZJ-2FmkYWTnjT4yXLUnnGUS9xB-2FPP9AWwrb-2FNEF9eprhZ38SHhKDAgufDE-2FTCnS7syd5-2BK-2F4vo1wjyxgw-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"></body>
+
 </html>
+
+
 
