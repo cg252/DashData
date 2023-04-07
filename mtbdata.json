@@ -1,9 +1,9 @@
 {
-    "current_temp": 56.1,
+    "current_temp": 53.6,
     "current_temp_statement": "good",
-    "current_per_temp": "20.1% warmer than last 30d high",
+    "current_per_temp": "14.7% warmer than last 30d high",
     "current_bottom_line": "Slightly moist trails with good temperatures and overcast skies",
-    "current_temp_bottom_line": "56.1F // good temps // 20.1% warmer than last 30d high",
+    "current_temp_bottom_line": "53.6F // good temps // 14.7% warmer than last 30d high",
     "h750_temperature": 47.9,
     "h750_precip_chance": 0,
     "h750_last10h_rain": 0.06,
