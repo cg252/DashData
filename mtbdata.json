@@ -1,9 +1,9 @@
 {
-    "current_temp": 33.8,
+    "current_temp": 33.4,
     "current_temp_statement": "frigid",
-    "current_per_temp": "30.7% colder than last 30d high",
+    "current_per_temp": "31.5% colder than last 30d high",
     "current_bottom_line": "Dry trails with frigid temperatures and clear skies",
-    "current_temp_bottom_line": "33.8F // frigid temps // 30.7% colder than last 30d high",
+    "current_temp_bottom_line": "33.4F // frigid temps // 31.5% colder than last 30d high",
     "h750_temperature": 33.4,
     "h750_precip_chance": 0,
     "h750_last10h_rain": 0.0,
