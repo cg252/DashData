@@ -15,7 +15,7 @@
     "tram_temp": "41",
     "tram_wind": "10 mph",
     "tram_status": "Forecasted",
-    "sub_status": "CLOSED",
+    "sub_status": "Forecasted",
     "weather_key": 123951,
     "trail_per": "0%",
     "avy_rating": 2,
