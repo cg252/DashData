@@ -13,7 +13,7 @@
     "base": "129",
     "snowfall": "595",
     "tram_temp": "31",
-    "tram_wind": "15 mph",
+    "tram_wind": "17 mph",
     "tram_status": "Forecasted",
     "sub_status": "Forecasted",
     "weather_key": 124006,
@@ -32,8 +32,8 @@
     "PT_24": "0.0&#8243",
     "PT_48": "0.0&#8243",
     "PT_7d": "2.0&#8243",
-    "PT_wind": "53 mph",
-    "PT_temp": "28.0 &#8457",
+    "PT_wind": "51 mph",
+    "PT_temp": "29.0 &#8457",
     "Sierra_avy_rating": 3,
     "PT_opensnow_0to5": "\n      0\"\n    ",
     "PT_opensnow_5to10": "\n      19\"\n    ",
@@ -42,5 +42,5 @@
     "UT_recentactivity": "Yesterday, the upper elevation terrain had a widespread wet-loose avalanche cycle during daytime heating.&nbsp; Observers in Salt Lake reported being able to see wet-loose avalanches on west facing slopes from valley locations.&nbsp;\r\r\r\r&nbsp;\r\r\rPhoto of a natural&nbsp;wet avalanche in the White Pine Chutes in mid Little Cottonwood canyon (Photo UDOT)\r\r\r\r&nbsp;\r\r&nbsp;\r\r&nbsp;\r\rWe continue to document and update avalanche observations from last week's historic avalanche cycle. Check out all avalanche observations HERE.&nbsp;\r\r&nbsp;\r\r&nbsp;\r\r&nbsp;\r\r&nbsp;\r\r&nbsp;\r\r&nbsp;\r\r&nbsp;\r\r&nbsp;\r",
     "UT_danger_rose": "https://utahavalanchecenter.org/sites/default/files/forecast/202304/20230411-203530-6.png",
     "UT_avyrating": 4,
-    "solitude_detail": "We're going from melty Monday straight into a toasty Tuesday, with another day of hot temperatures and sunny skies! Just a couple weeks ago we were wondering if winter would ever end, but at this point it's safe to say spring has sprung. Highs today will be in the mid 50s with clear but breezy conditions all day - pack some sunscreen and layer lightly! The common theme for the week is ever-changing snow conditions - expect things to be moderately crusty in the morning, transitioning to slushy wet snow pretty quickly as the sun beats down. Avalanche hazards due to a deep and rapidly warming snowpack mean that we may have to close terrain throughout the day for avalanche mitigation work. Keep an eye on the Solitude app for the latest on lift and terrain status as things change on the hill. Friendly reminder that UDOT will be closing the canyon between 11:00 a.m. and 4:00 p.m. thru Thursday this week due to increased avalanche hazard. Check the UDOT website or social media channels for the status of the canyon road and stay tuned to our app or website for the latest updates from Solitude."
+    "solitude_detail": "It's hump day! Or should we say slush day? Our warm weather continues today with highs in the mid 50s and sunshine throughout the day. A weak storm moving into the area tonight will bring some gusty winds to the mountain today, and thankfully some cooler temperatures starting on Thursday. We're expecting 2-6 inches from this storm by Friday \u2014 nothing huge by any means but we'll take it! With a few days straight of warm weather, snow instability is a real issue. Our patrollers will be assessing terrain throughout the day and closing terrain as needed \u2014 be sure to check the Solitude app for the latest on terrain and lift status. A reminder for those who plan to ski or ride today \u2014 UDOT will be closing the canyon between 11:00 a.m. and 4:00 p.m. thru Thursday this week due to increased avalanche hazard. Check the UDOT website or social media channels for the status of the canyon road and stay tuned to our app or website for the latest updates from Solitude."
 }
