@@ -12,8 +12,8 @@
     "7d": "1",
     "base": "129",
     "snowfall": "595",
-    "tram_temp": "8",
-    "tram_wind": "13 mph",
+    "tram_temp": "7",
+    "tram_wind": "10 mph",
     "tram_status": "CLOSED",
     "sub_status": "CLOSED",
     "weather_key": 124192,
@@ -32,7 +32,7 @@
     "PT_24": "0.0&#8243",
     "PT_48": "0.0&#8243",
     "PT_7d": "1.0&#8243",
-    "PT_wind": "19 mph",
+    "PT_wind": "18 mph",
     "PT_temp": "30.0 &#8457",
     "Sierra_avy_rating": 2,
     "PT_opensnow_0to5": "\n      9\"\n    ",
@@ -42,5 +42,5 @@
     "UT_recentactivity": "No reports of avalanches on Thursday.\r",
     "UT_danger_rose": "https://utahavalanchecenter.org/sites/default/files/forecast/202304/20230414-071819-6.png",
     "UT_avyrating": 1,
-    "solitude_detail": "A weak storm passed through the area yesterday, lowering temperatures but delivering only dust. Temperatures dropped into the 20s during the day and into the teens last night \u2013 great for stabilizing the mountain and preserving our snow base. We expect similar temperatures today and tonight before the mercury climbs above freezing again on Saturday. The snow on the mountain is firm right now due to recent thawing and refreezing. Look to groomed runs for the best skiing and riding. You can find the grooming status of trails on our website or by using the Solitude app."
+    "solitude_detail": "Spring returns to Solitude! After a couple days of below-freezing temperatures, the mountain warms up again today. Temperatures will start in the low 20s and climb into the mid-30s by end of day \u2014 with non-stop sunshine leading the way. The recent cold weather has helped stabilize our base, but it\u2019s also left us with icy conditions. The firm surface should start softening up as the sun goes to work. Seek out sunny groomers for the most pleasant conditions to start the day. Today is our last scheduled Beach Bash of the season \u2014 join us for food, drinks, and live music outside of Last Chance Lodge starting at 2:30 p.m. Ladies, come shred the Main Street Terrain Park at 1:00 p.m. with other female skiers and riders. See our calendar for more details on today\u2019s events."
 }
