@@ -154,7 +154,7 @@
     "h806_dryness": "Dry",
     "h807_temperature": 54.6,
     "h807_precip_chance": 18,
-    "h807_last10h_rain": 0.01,
+    "h807_last10h_rain": 0.0,
     "h807_dryness": "Dry",
     "h808_temperature": 54.8,
     "h808_precip_chance": 21,
@@ -162,10 +162,10 @@
     "h808_dryness": "Dry",
     "h809_temperature": 53.7,
     "h809_precip_chance": 23,
-    "h809_last10h_rain": 0.02,
+    "h809_last10h_rain": 0.01,
     "h809_dryness": "Dry",
     "h810_temperature": 53.0,
     "h810_precip_chance": 25,
-    "h810_last10h_rain": 0.02,
+    "h810_last10h_rain": 0.01,
     "h810_dryness": "Dry"
 }
