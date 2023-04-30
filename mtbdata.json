@@ -1,9 +1,9 @@
 {
-    "current_temp": 51.2,
+    "current_temp": 52.3,
     "current_temp_statement": "cool",
-    "current_per_temp": "5.1% colder than last 30d high",
-    "current_bottom_line": "Moist trails with cool temperatures and overcast skies",
-    "current_temp_bottom_line": "51.2F // cool temps // 5.1% colder than last 30d high",
+    "current_per_temp": "3.0% colder than last 30d high",
+    "current_bottom_line": "Moist trails with cool temperatures and foggy skies",
+    "current_temp_bottom_line": "52.3F // cool temps // 3.0% colder than last 30d high",
     "h750_temperature": 51.2,
     "h750_precip_chance": 98,
     "h750_last10h_rain": 0.14,
