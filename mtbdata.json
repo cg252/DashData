@@ -201,12 +201,12 @@
     "h808_dryness": "Dry",
     "h809_temperature": 67.6,
     "h809_precip_chance": 0,
-    "h809_precip_amount": 0.0,
+    "h809_precip_amount": 0.02,
     "h809_last10h_rain": 0.0,
     "h809_dryness": "Dry",
     "h810_temperature": 61.3,
     "h810_precip_chance": 1,
-    "h810_precip_amount": 0.0,
-    "h810_last10h_rain": 0.0,
-    "h810_dryness": "Dry"
+    "h810_precip_amount": 0.02,
+    "h810_last10h_rain": 0.02,
+    "h810_dryness": "Moist"
 }
