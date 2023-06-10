@@ -1,9 +1,9 @@
 {
-    "current_temp": 55.7,
+    "current_temp": 54.1,
     "current_temp_statement": "perfect",
-    "current_per_temp": "12.5% colder than last 30d high",
-    "current_bottom_line": "Dry trails with perfect temperatures and partly cloudy skies",
-    "current_temp_bottom_line": "55.7F // perfect temps // 12.5% colder than last 30d high",
+    "current_per_temp": "15.0% colder than last 30d high",
+    "current_bottom_line": "Dry trails with perfect temperatures and overcast skies",
+    "current_temp_bottom_line": "54.1F // perfect temps // 15.0% colder than last 30d high",
     "h750_temperature": 48.8,
     "h750_precip_chance": 26,
     "h750_precip_amount": 0.0,
