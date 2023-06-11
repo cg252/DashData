@@ -1,9 +1,9 @@
 {
-    "current_temp": 75.1,
+    "current_temp": 72.8,
     "current_temp_statement": "hot",
-    "current_per_temp": "16.6% warmer than last 30d high",
-    "current_bottom_line": "Dry trails with hot temperatures and clear skies",
-    "current_temp_bottom_line": "75.1F // hot temps // 16.6% warmer than last 30d high",
+    "current_per_temp": "13.0% warmer than last 30d high",
+    "current_bottom_line": "Dry trails with hot temperatures and partly cloudy skies",
+    "current_temp_bottom_line": "72.8F // hot temps // 13.0% warmer than last 30d high",
     "h750_temperature": 51.6,
     "h750_precip_chance": 0,
     "h750_precip_amount": 0.0,
