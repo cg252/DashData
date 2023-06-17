@@ -1,9 +1,9 @@
 {
-    "current_temp": 62.1,
+    "current_temp": 62.0,
     "current_temp_statement": "warm",
-    "current_per_temp": "4.6% colder than last 30d high",
-    "current_bottom_line": "Wet trails with warm temperatures and heavy rain",
-    "current_temp_bottom_line": "62.1F // warm temps // 4.6% colder than last 30d high",
+    "current_per_temp": "4.8% colder than last 30d high",
+    "current_bottom_line": "Wet trails with warm temperatures and dense drizzles",
+    "current_temp_bottom_line": "62.0F // warm temps // 4.8% colder than last 30d high",
     "h750_temperature": 62.6,
     "h750_precip_chance": 81,
     "h750_precip_amount": 0.0,
