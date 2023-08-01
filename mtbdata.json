@@ -65,7 +65,7 @@
     "h761_last10h_rain": 0.0,
     "h761_dryness": "Dry",
     "h762_temperature": 71.0,
-    "h762_precip_chance": 0,
+    "h762_precip_chance": 1,
     "h762_precip_amount": 0.0,
     "h762_last10h_rain": 0.0,
     "h762_dryness": "Dry",
