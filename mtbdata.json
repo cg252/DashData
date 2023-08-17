@@ -207,6 +207,6 @@
     "h810_temperature": 69.7,
     "h810_precip_chance": 8,
     "h810_precip_amount": 0.0,
-    "h810_last10h_rain": 0.0,
+    "h810_last10h_rain": 0.01,
     "h810_dryness": "Dry"
 }
